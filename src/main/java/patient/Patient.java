@@ -38,6 +38,10 @@ public abstract class  Patient {
     }
 
     public void setClinicNumber(String clinicNumber) {
+        double number = (Math.random() * ((999999 - 100000)) + 100000);
+        long iNumber = (long) Math.round(number);
+        clinicNumber = Long.toString(iNumber);
+        //int number2 = Math.round(number);
         this.clinicNumber = clinicNumber;
     }
 
@@ -82,7 +86,8 @@ public abstract class  Patient {
     }
 
     //method to generate the clinicNumber
-    public abstract String generateNumber();
+
+
 
 }
 

@@ -11,14 +11,6 @@ public class Cat extends Patient{
         super(clinicNumber, name, breed, owner, statusVaccines, desparasization);
     }
 
-    @Override
-    public String generateNumber() {
-        double number = (Math.random() * ((999999 - 100000)) + 100000);
-        long iNumber = (long) Math.round(number);
-        String clinicNumber = Long.toString(iNumber);
-        //int number2 = Math.round(number);
-        return clinicNumber;
-    }
 
     @Override
     public String toString() {

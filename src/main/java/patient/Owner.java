@@ -23,7 +23,11 @@ public class Owner {
     }
 
     public void setDNI(String DNI) {
-        this.DNI = DNI;
+         if(DNI.length() == 10){
+             this.DNI = DNI;
+         }else{
+         System.out.println("DNI must be 10 digits long");
+         }
     }
 
     public String getName() {
@@ -47,7 +51,11 @@ public class Owner {
     }
 
     public void setCellphone(String cellphone) {
-        this.cellphone = cellphone;
+        if(cellphone.length() == 10){
+            this.cellphone = cellphone;
+        }else{
+            System.out.println("Cellphone number must be 10 digits");
+        }
     }
 
     public int getAge() {
@@ -55,7 +63,11 @@ public class Owner {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if(age >= 18){
+            this.age = age;
+        }else{
+            System.out.println("Age must be at least 18 years old");
+        }
     }
 
     @Override
