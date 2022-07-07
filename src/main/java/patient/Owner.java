@@ -63,11 +63,7 @@ public class Owner {
     }
 
     public void setAge(int age) {
-        if(age >= 18){
-            this.age = age;
-        }else{
-            System.out.println("Age must be at least 18 years old");
-        }
+        this.age = age;
     }
 
     @Override

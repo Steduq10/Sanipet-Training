@@ -11,7 +11,7 @@ import java.awt.geom.Path2D;
 import java.util.Scanner;
 
 public class Main {
-    public static void CatPatient(){
+    /*public static void CatPatient(){
 
         System.out.println("What is the name of your cat?: ");
         Scanner scan = new Scanner(System.in);
@@ -26,9 +26,9 @@ public class Main {
         String nombre = scan.nextLine();
         System.out.println("Welcome " + nombre);
 
-    }
+    }*/
     public static void main(String[] args) {
-        System.out.println("*************************************");
+        /*System.out.println("*************************************");
         System.out.println("Welcome to Veterinary care center");
         System.out.println("*************************************");
         System.out.println();
@@ -37,7 +37,7 @@ public class Main {
         /*
         Owner owner2 = new Owner("1216719011","Steven", "3014707469", 26, "Duque");
         System.out.println(owner2.toString());
-        */
+
 
         boolean valid = false;
 
@@ -58,14 +58,7 @@ public class Main {
                // Scanner scan = new Scanner(System.in);
                 System.out.println("What's the owner's name?: ");
                 String ownerName = scan.nextLine();
-                System.out.println("What's the owner's surnname?: ");
-                String ownerSurName = scan.nextLine();
-                System.out.println("What's the owner's DNI?: ");
-                String ownerDNI = scan.nextLine();
-                System.out.println("What's the owner's cellphone?: ");
-                String ownerPhone = scan.nextLine();
-                System.out.println("What's the owner's age?: ");
-                int ownerAge = scan.nextInt();
+
                 while (ownerAge <18){
                     System.out.println("You must be 18 years old or more");
                     System.out.println("What's the owner's age?: ");
@@ -106,10 +99,10 @@ public class Main {
                 valid = false;
             }
 
-        }
-
-
-
+        }(/
+*/
+            Menu m = new Menu();
+            m.showMenu();
         }
 }
 

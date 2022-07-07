@@ -9,6 +9,11 @@ public class Schedule {
     protected String endTime;
     protected DayOfWeek day;
 
+
+    public Schedule() {
+
+    }
+
     public Schedule(String startTime, String endTime, int day) {
         this.startTime = startTime;
         this.endTime = endTime;

@@ -9,6 +9,8 @@ public class Doctor extends Employee {
     }
 
     private void setSchedule(int day) {
+        System.out.println("1. Monday to Wednesday");
+        System.out.println("1. Thursday to Saturday");
         switch (day){
             case 1: {
                 Schedule schedule1 = new Schedule("8AM", "7PM", 1);
