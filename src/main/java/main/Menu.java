@@ -165,28 +165,34 @@ public class Menu {
                  "3. Main menu\n" +
                  "0. Exit");
              int option = sc.nextInt();
+        while(option < 0|| option > 3){
+            System.out.println("Please select a valid option");
+            System.out.println("Which specialist you want to consult today? :\n" +
+                    "1. Doctor\n" +
+                    "2. Stylist\n" +
+                    "3. Main menu\n" +
+                    "0. Exit");
+            option = sc.nextInt();
+        }
 
-             
+        switch(option){
+            case 1:
+                doctorAppointment();
+                break;
+            case 2:
+                stylistAppointment();
+                break;
+            case 3:
+                generalMenu();
+                break;
+            case 4:
+                System.out.println("Thank you for you visit");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Please select a valid option");
+        }
 
-         do{
-             switch(option){
-                 case 1:
-                     doctorAppointment();
-                     break;
-                 case 2:
-                     stylistAppointment();
-                     break;
-                 case 3:
-                     generalMenu();
-                     break;
-                 case 4:
-                     System.out.println("Thank you for you visit");
-                     System.exit(0);
-                     break;
-                 default:
-                     System.out.println("Please select a valid option");
-             }
-         }while(option != 0);
     }
     public static void doctorAppointment(){
           System.out.println("*************************************");
@@ -197,7 +203,29 @@ public class Menu {
                            "1. General medicine\n" +
                            "2. Surgery\n" +
                            "0. Exit");
-
+          Scanner sc = new Scanner(System.in);
+          String option = sc.nextLine();
+        while(option != "0"|| option != "1" || option != "2"|| option != "3" ){
+            System.out.println("Please select a valid option");
+            System.out.println("Which service you want to select for your pet? :\n" +
+                    "1. General medicine\n" +
+                    "2. Surgery\n" +
+                    "0. Exit");
+            option = sc.nextLine();
+        }
+        switch (option){
+            case "1":
+                System.out.println();
+                break;
+            case "2":
+                System.out.println();
+                break;
+            case "0":
+                System.out.println();
+                break;
+            default:
+                break;
+        }
     }
     public static void stylistAppointment(){
     }
