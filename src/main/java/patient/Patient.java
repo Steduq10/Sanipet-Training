@@ -81,6 +81,7 @@ public abstract class  Patient {
         }else if(statusVaccines.equalsIgnoreCase("y"))
         {
             System.out.println("Great!!! you can continue");
+            System.out.println();
         }else{
             System.out.println("Please write a valid option Y/N");
         }

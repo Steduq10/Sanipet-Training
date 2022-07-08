@@ -2,8 +2,8 @@ package main;
 
 public class Main {
     public static void main(String[] args) {
-        Menu m = new Menu();
-        m.generalMenu();
+        Menu user = new Menu();
+        user.generalMenu();
         }
 }
 

@@ -19,7 +19,7 @@ public class Cat extends Patient{
                 ", Name = " + name +
                 ", Breed = " + breed +
                 ", " + owner +
-                ", statusVaccines=" + statusVaccines +
+                ", Vaccines status = " + statusVaccines +
                 ", De-worming date = " + deworming +
                 ']';
     }
