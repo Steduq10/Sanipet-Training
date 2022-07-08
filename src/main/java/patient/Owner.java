@@ -74,7 +74,7 @@ public class Owner {
         return "Owner[" +
                 "DNI = " + DNI +
                 ", Name = " + name +
-                ", Surname ='" + surname +
+                ", Surname = " + surname +
                 ", Cellphone = " + cellphone +
                 ", Age = " + age +
                 " ]";

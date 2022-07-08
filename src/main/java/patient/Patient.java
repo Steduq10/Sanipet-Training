@@ -2,6 +2,7 @@ package patient;
 
 import java.util.Date;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Math.round;
 
@@ -20,11 +21,11 @@ public abstract class  Patient {
     public Patient() {
     }
 
-    public Patient(String clinicNumber, String name, String breed, Owner owner, String statusVaccines, Date deworming) {
+    public Patient(String clinicNumber, String name, String breed, String statusVaccines, Date deworming) {
         this.clinicNumber = clinicNumber;
         this.name = name;
         this.breed = breed; 
-        this.owner = owner;
+        //this.owner = owner;
         this.statusVaccines = statusVaccines;
         this.deworming = deworming;
     }
@@ -37,12 +38,9 @@ public abstract class  Patient {
         return clinicNumber;
     }
 
-    public void setClinicNumber(String clinicNumber) {
-        double number = (Math.random() * ((999999 - 100000)) + 100000);
-        long iNumber = (long) Math.round(number);
-        clinicNumber = Long.toString(iNumber);
-        //int number2 = Math.round(number);
+    public String setClinicNumber() {
         this.clinicNumber = clinicNumber;
+        return String.valueOf(ThreadLocalRandom.current().nextInt(1, 999999 + 1));
     }
 
     public String getName() {

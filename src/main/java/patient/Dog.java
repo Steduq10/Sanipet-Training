@@ -7,8 +7,8 @@ public class Dog extends Patient{
     public Dog() {
     }
 
-    public Dog(String clinicNumber, String name, String breed, Owner owner, String statusVaccines, Date desparasization) {
-        super(clinicNumber, name, breed, owner, statusVaccines, desparasization);
+    public Dog(String clinicNumber, String name, String breed, String statusVaccines, Date desparasization) {
+        super(clinicNumber, name, breed, statusVaccines, desparasization);
     }
 
     @Override
@@ -19,7 +19,7 @@ public class Dog extends Patient{
                 ", breed='" + breed + '\'' +
                 ", " + owner +
                 ", statusVaccines=" + statusVaccines +
-                ", desparasization=" + desparasization +
+                ", desparasization=" + deworming +
                 '}';
     }
 }
