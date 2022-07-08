@@ -1,5 +1,6 @@
 package main;
 
+import employee.Doctor;
 import patient.Cat;
 import patient.Dog;
 import patient.Owner;
@@ -195,6 +196,8 @@ public class Menu {
 
     }
     public static void doctorAppointment(){
+          Doctor selection = new Doctor();
+          
           System.out.println("*************************************");
           System.out.println("\tDOCTOR MENU");
           System.out.println("*************************************");
@@ -215,6 +218,7 @@ public class Menu {
         }
         switch (option){
             case "1":
+                selection.setSchedule();
                 System.out.println();
                 break;
             case "2":
