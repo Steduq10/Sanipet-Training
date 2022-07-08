@@ -3,7 +3,11 @@ package patient;
 import java.util.Date;
 
 public class Dog extends Patient{
-    public Dog(String clinicNumber, String name, String breed, Owner owner, boolean statusVaccines, Date desparasization) {
+
+    public Dog() {
+    }
+
+    public Dog(String clinicNumber, String name, String breed, Owner owner, String statusVaccines, Date desparasization) {
         super(clinicNumber, name, breed, owner, statusVaccines, desparasization);
     }
 

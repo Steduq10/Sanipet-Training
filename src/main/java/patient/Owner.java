@@ -4,18 +4,21 @@ public class Owner {
     private String DNI;
     private String name;
     private String surname;
+    private String completeName;
     private String cellphone;
     private int age;
 
     public Owner() {
     }
 
-    public Owner(String DNI, String name, String cellphone, int age, String surname) {
+
+    public Owner(String DNI, String name, String surname, String completeName, String cellphone, int age) {
         this.DNI = DNI;
         this.name = name;
+        this.surname = surname;
+        this.completeName = completeName;
         this.cellphone = cellphone;
         this.age = age;
-        this.surname = surname;
     }
 
     public String getDNI() {
@@ -68,12 +71,12 @@ public class Owner {
 
     @Override
     public String toString() {
-        return "Owner{" +
-                "DNI='" + DNI + '\'' +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", cellphone='" + cellphone + '\'' +
-                ", age=" + age +
-                '}';
+        return "Owner[" +
+                "DNI = " + DNI +
+                ", Name = " + name +
+                ", Surname ='" + surname +
+                ", Cellphone = " + cellphone +
+                ", Age = " + age +
+                " ]";
     }
 }

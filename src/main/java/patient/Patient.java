@@ -11,8 +11,8 @@ public abstract class  Patient {
     protected String name;
     protected String breed;
     protected Owner owner;
-    protected boolean statusVaccines;
-    protected Date desparasization;
+    protected String statusVaccines;
+    protected Date deworming;
 
     //constructor
 
@@ -20,13 +20,13 @@ public abstract class  Patient {
     public Patient() {
     }
 
-    public Patient(String clinicNumber, String name, String breed, Owner owner, boolean statusVaccines, Date desparasization) {
+    public Patient(String clinicNumber, String name, String breed, Owner owner, String statusVaccines, Date deworming) {
         this.clinicNumber = clinicNumber;
         this.name = name;
-        this.breed = breed;
+        this.breed = breed; 
         this.owner = owner;
         this.statusVaccines = statusVaccines;
-        this.desparasization = desparasization;
+        this.deworming = deworming;
     }
 
     public Patient(String clinicNumber) {
@@ -62,6 +62,9 @@ public abstract class  Patient {
     }
 
     public Owner getOwner() {
+        Owner owner = new Owner();
+        String completeName = owner.getName() + " " + owner.getSurname();
+        //owner = completeName;
         return owner;
     }
 
@@ -69,20 +72,29 @@ public abstract class  Patient {
         this.owner = owner;
     }
 
-    public boolean isStatusVaccines() {
+    public String getStatusVaccines() {
         return statusVaccines;
     }
 
-    public void setStatusVaccines(boolean statusVaccines) {
+    public void setStatusVaccines(String statusVaccines) {
+        if(statusVaccines.equalsIgnoreCase("n")){
+            System.out.println("Your pet must be vaccinated!!!");
+            System.exit(0);
+        }else if(statusVaccines.equalsIgnoreCase("y"))
+        {
+            System.out.println("Great!!! you can continue");
+        }else{
+            System.out.println("Please write a valid option Y/N");
+        }
         this.statusVaccines = statusVaccines;
     }
 
-    public Date getDesparasization() {
-        return desparasization;
+    public Date getdeworming() {
+        return deworming;
     }
 
-    public void setDesparasization(Date desparasization) {
-        this.desparasization = desparasization;
+    public void setdeworming(Date deworming) {
+        this.deworming = deworming;
     }
 
     //method to generate the clinicNumber
