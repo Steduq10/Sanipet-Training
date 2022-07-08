@@ -6,13 +6,61 @@ import java.util.Scanner;
 
 public class Menu {
       Scanner sc = new Scanner(System.in);
-      public static void showMenu(){
-            System.out.println("*************************************");
-            System.out.println("Welcome to Veterinary care center");
-            System.out.println("*************************************");
-            System.out.println();
-            System.out.println("Please select an option down below");
 
+
+
+    static void ownerInformation() {
+        System.out.println("*************************************");
+        System.out.println("Welcome to Veterinary care center");
+        System.out.println("*************************************");
+        System.out.println();
+
+        String response;
+        Owner owner = new Owner();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("What's the owner's age?: ");
+        int age = sc.nextInt();
+        if (age >= 18) {
+            owner.setAge(age);
+            System.out.println("\n");
+            System.out.println("What's the owner's DNI?: ");
+            String DNI = sc.nextLine();
+            response = sc.nextLine();
+
+
+            while (response.length() >= 11) {
+                System.out.println("DNI must be 10 digits long ");
+                System.out.println("What's the owner's DNI?: ");
+                //DNI = sc.nextLine();
+                response = sc.nextLine();
+            }
+            owner.setDNI(response);
+            System.out.println("\n");
+            System.out.println("What's the owner's cellphone?: ");
+            String cellphone = sc.nextLine();
+
+            while (cellphone.length() != 10) {
+                System.out.println("Cellphone must be 10 digits long ");
+                System.out.println("What's the owner's cellphone?: ");
+                cellphone = sc.nextLine();
+            }
+            owner.setCellphone(response);
+            System.out.println("\n");
+            System.out.println("What's the owner's name?: ");
+            response = sc.nextLine();
+            owner.setName(response);
+            System.out.println("\n");
+            System.out.println("What's the owner's surnname?: ");
+            response = sc.nextLine();
+            owner.setSurname(response);
+
+
+            System.out.println(owner.toString());
+        }
+    }
+    public static void showMenu(){
+
+        System.out.println("Please select an option down below");
 
             int response = 0;
             do {
@@ -44,48 +92,8 @@ public class Menu {
             }while (response != 0);
         }
 
-         static void ownerInformation() {
-             String response;
-             Owner owner = new Owner();
-             Scanner sc = new Scanner(System.in);
-             System.out.println("What's the owner's age?: ");
-             int age = sc.nextInt();
-             if(age >= 18){
-                   owner.setAge(age);
-                   System.out.println("\n");
-                   System.out.println("What's the owner's DNI?: ");
-                   String DNI = sc.nextLine();
-                   response = sc.nextLine();
-                   if(DNI.length() <= 10){
-                         owner.setDNI(response);
-                         System.out.println("\n");
-                         System.out.println("What's the owner's cellphone?: ");
-                         String cellphone = sc.nextLine();
-                         if(cellphone.length() == 10){
-                               owner.setCellphone(response);
-                               System.out.println("\n");
-                               System.out.println("What's the owner's name?: ");
-                               response = sc.nextLine();
-                               owner.setName(response);
-                               System.out.println("\n");
-                               System.out.println("What's the owner's surnname?: ");
-                               response = sc.nextLine();
-                               owner.setSurname(response);
-                         }else{
-                               System.out.println("Cellphone must be 10 digits long ");
-                               System.exit(0);
-                         }
-                   }else{
-                         System.out.println("DNI must be 10 digits long ");
-                         System.exit(0);
-                   }       
-             }else{
-                 System.out.println("You must be 18 years old ");
-                 System.exit(0);
-             }
-             System.out.println(owner.toString());
 
-      }
+
       /*do {
                       System.out.println("\n\n");
                       System.out.println("Please type the ");
@@ -112,4 +120,7 @@ public class Menu {
                       }
                   }while (response != 0);
               }*/
+
+
+
 }
