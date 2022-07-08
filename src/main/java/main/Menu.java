@@ -25,11 +25,11 @@ public class Menu {
                     ownersInformation();
                 break;
                 case 2:
-                    //menuAppointments();
+                    appointmentMenu();
                 break;
           }
       }
-      public static Owner ownersInformation() {
+    public static Owner ownersInformation() {
             Scanner sc = new Scanner(System.in);
             String response;
             Owner owner = new Owner();
@@ -136,5 +136,42 @@ public class Menu {
           System.out.println();
           dog.setClinicNumber();
           generalMenu();
+    }
+    public static void appointmentMenu(){
+        Scanner sc = new Scanner(System.in);
+        int option = sc.nextInt();
+        System.out.println("*************************************");
+        System.out.println("\tAPPOINTMENTS MENU");
+        System.out.println("*************************************");
+        System.out.println();
+        System.out.println("Insert one of the following options:\n" +
+                "1. By Day\n" +
+                "2. By Doctor\n" +
+                "3. By Stylist\n" +
+                "4. Exit");
+        do{
+            switch(option){
+                case 1:
+                    dayAppointment();
+                    break;
+                case 2:
+                    doctorAppointment();
+                    break;
+                case 3:
+                    stylistAppointment();
+                    break;
+                case 4:
+                    System.out.println("Thank you for you visit");
+                    break;
+                default:
+                    System.out.println("Please select a valid option");
+            }
+        }while(option != 0);
+    }
+    public static void dayAppointment(){
+    }
+    public static void doctorAppointment(){
+    }
+    public static void stylistAppointment(){
     }
 }
