@@ -80,7 +80,7 @@ public class Menu {
           }
           return owner;
       }
-      /*public static void petSelection(){
+      public static void petSelection(){
           System.out.println("Please select an option down below");
           Scanner sc = new Scanner(System.in);
           int response = 0;
@@ -106,25 +106,28 @@ public class Menu {
           }while (response != 0);
     }
     public static void catMenu(){
-          Patient cat = new Cat();
-          Scanner sc = new Scanner(System.in);
-          System.out.println("********************************");
-          System.out.println("\t\t\tCAT MENU");
-          System.out.println("********************************");
-          System.out.println("What's your cat's name?: ");
-          String name = sc.nextLine();
-          cat.setName(name);
-          System.out.println("\n");
-          System.out.println("What's your cat's breed?: ");
-          String breed = sc.nextLine();
-          cat.setBreed(breed);
-          System.out.println("\n");
-          System.out.println("Is your cat vaccinated? Y/N: ");
-          String statusVaccines = sc.nextLine();
-          cat.setStatusVaccines(statusVaccines);
-          cat.setClinicNumber();
-          System.out.println(cat.toString());
-          generalMenu();
+        Patient cat = new Cat();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("********************************");
+        System.out.println("\t\t\tCAT MENU");
+        System.out.println("********************************");
+        System.out.println("What's your cat's name?: ");
+        String name = sc.nextLine();
+        cat.setName(name);
+        System.out.println("\n");
+        System.out.println("What's your cat's breed?: ");
+        String breed = sc.nextLine();
+        cat.setBreed(breed);
+        System.out.println("\n");
+        System.out.println("Is your cat vaccinated? Y/N: ");
+        String statusVaccines = sc.nextLine();
+        cat.setStatusVaccines(statusVaccines);
+        cat.setClinicNumber();
+        System.out.println(cat.toString());
+        //Owner owner = new Owner();
+        //owner.toString();
+        //generalMenu();
+        cat.toString();
     }
     public static void dogMenu(){
           Patient dog = new Dog();
@@ -185,5 +188,5 @@ public class Menu {
     public static void doctorAppointment(){
     }
     public static void stylistAppointment(){
-    }*/
+    }
 }
