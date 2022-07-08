@@ -82,7 +82,7 @@ public class Owner {
                     ", Cellphone = " + cellphone + " " +
                     ", Age = " + age +
                     " ]";
-            String route = "E:\\Documents\\Documents\\SOFKADEV\\Sanipet-Training\\ownerInformation.txt";
+            String route = "C:\\Users\\steve\\OneDrive\\Documentos\\test\\ownerInformation.txt";
             File file = new File(route);
             // Si el archivo no existe es creado
             if (!file.exists()) {

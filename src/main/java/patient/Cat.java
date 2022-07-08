@@ -18,7 +18,6 @@ public class Cat extends Patient{
                 "Clinic History Number = " + clinicNumber +
                 ", Name = " + name +
                 ", Breed = " + breed +
-                ", " + owner +
                 ", Vaccines status = " + statusVaccines +
                 ", De-worming date = " + deworming +
                 ']';

@@ -29,7 +29,7 @@ public class Menu {
                    ownersInformation();
                   break;
               case 2:
-                    //appointmentMenu();
+                    appointmentMenu();
                   break;
               case 5:
                   System.out.println("Thank you for visiting");
@@ -76,7 +76,7 @@ public class Menu {
               owner.setSurname(response);
               System.out.println(owner.toString());
               System.out.println();
-              //petSelection();
+              petSelection();
           }
           return owner;
       }
@@ -126,8 +126,8 @@ public class Menu {
         System.out.println(cat.toString());
         //Owner owner = new Owner();
         //owner.toString();
-        //generalMenu();
         cat.toString();
+        generalMenu();
     }
     public static void dogMenu(){
           Patient dog = new Dog();
@@ -153,39 +153,51 @@ public class Menu {
           generalMenu();
     }
     public static void appointmentMenu(){
-         Scanner sc = new Scanner(System.in);
-         int option = sc.nextInt();
          System.out.println("*************************************");
-         System.out.println("\tAPPOINTMENTS MENU");
+         System.out.println("\t\tAPPOINTMENTS MENU");
          System.out.println("*************************************");
          System.out.println();
-         System.out.println("Insert one of the following options:\n" +
-                 "1. By Day\n" +
-                 "2. By Doctor\n" +
-                 "3. By Stylist\n" +
-                 "4. Exit");
+         Scanner sc = new Scanner(System.in);
+
+         System.out.println("Which specialist you want to consult today? :\n" +
+                 "1. Doctor\n" +
+                 "2. Stylist\n" +
+                 "3. Main menu\n" +
+                 "0. Exit");
+             int option = sc.nextInt();
+
+             
+
          do{
              switch(option){
                  case 1:
-                     dayAppointment();
-                     break;
-                 case 2:
                      doctorAppointment();
                      break;
-                 case 3:
+                 case 2:
                      stylistAppointment();
+                     break;
+                 case 3:
+                     generalMenu();
                      break;
                  case 4:
                      System.out.println("Thank you for you visit");
+                     System.exit(0);
                      break;
                  default:
                      System.out.println("Please select a valid option");
              }
          }while(option != 0);
     }
-    public static void dayAppointment(){
-    }
     public static void doctorAppointment(){
+          System.out.println("*************************************");
+          System.out.println("\tDOCTOR MENU");
+          System.out.println("*************************************");
+          System.out.println();
+          System.out.println("Which service you want to select for your pet? :\n" +
+                           "1. General medicine\n" +
+                           "2. Surgery\n" +
+                           "0. Exit");
+
     }
     public static void stylistAppointment(){
     }
