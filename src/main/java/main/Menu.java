@@ -29,7 +29,7 @@ public class Menu {
                    ownersInformation();
                   break;
               case 2:
-                    appointmentMenu();
+                    //appointmentMenu();
                   break;
               case 5:
                   System.out.println("Thank you for visiting");
@@ -76,11 +76,11 @@ public class Menu {
               owner.setSurname(response);
               System.out.println(owner.toString());
               System.out.println();
-              petSelection();
+              //petSelection();
           }
           return owner;
       }
-      public static void petSelection(){
+      /*public static void petSelection(){
           System.out.println("Please select an option down below");
           Scanner sc = new Scanner(System.in);
           int response = 0;
@@ -185,5 +185,5 @@ public class Menu {
     public static void doctorAppointment(){
     }
     public static void stylistAppointment(){
-    }
+    }*/
 }

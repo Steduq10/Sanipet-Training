@@ -1,5 +1,7 @@
 package patient;
-
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 public class Owner {
     private String DNI;
     private String name;
@@ -71,12 +73,29 @@ public class Owner {
 
     @Override
     public String toString() {
-        return "Owner[" +
-                "DNI = " + DNI +
-                ", Name = " + name +
-                ", Surname = " + surname +
-                ", Cellphone = " + cellphone +
-                ", Age = " + age +
-                " ]";
+        String ownerInformation = null;
+        try {
+            ownerInformation = "Owner [" +
+                    "DNI = " + DNI +
+                    " , Name = " + name + " " +
+                    ", Surname = " + surname + " " +
+                    ", Cellphone = " + cellphone + " " +
+                    ", Age = " + age +
+                    " ]";
+            String route = "E:\\Documents\\Documents\\SOFKADEV\\Sanipet-Training\\ownerInformation.txt";
+            File file = new File(route);
+            // Si el archivo no existe es creado
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("Owner Register Information\n");
+            bw.write(ownerInformation);
+            bw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ownerInformation;
     }
 }
