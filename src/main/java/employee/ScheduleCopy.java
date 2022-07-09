@@ -3,21 +3,21 @@ package employee;
 import java.time.DayOfWeek;
 
 
-public class Schedule {
+public class ScheduleCopy {
 
     protected String startTime;
     protected String endTime;
-    protected String day;
+    protected DayOfWeek day;
 
 
-    public Schedule() {
+    public ScheduleCopy() {
 
     }
 
-    public Schedule(String startTime, String endTime, String day) {
+    public ScheduleCopy(String startTime, String endTime, int day) {
         this.startTime = startTime;
         this.endTime = endTime;
-        this.day = day;
+        this.day = DayOfWeek.of(day);
     }
 
     public String getStartTime() {
@@ -36,20 +36,11 @@ public class Schedule {
         this.endTime = endTime;
     }
 
-    public String getDay() {
+    public DayOfWeek getDay() {
         return day;
     }
 
-    public void setDay(String day) {
+    public void setDay(DayOfWeek day) {
         this.day = day;
-    }
-
-    @Override
-    public String toString() {
-        return "Schedule{" +
-                "startTime='" + startTime + '\'' +
-                ", endTime='" + endTime + '\'' +
-                ", day='" + day + '\'' +
-                '}';
     }
 }
