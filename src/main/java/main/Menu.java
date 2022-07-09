@@ -2,11 +2,14 @@ package main;
 
 import employee.Doctor;
 import employee.Stylist;
+import appointments.Medicine;
 import patient.*;
 
 import java.awt.desktop.SystemEventListener;
 import java.time.LocalDate;
 import java.util.Scanner;
+
+import static appointments.Medicine.StockMedicine;
 
 public class Menu {
       public static void generalMenu (){
@@ -443,10 +446,10 @@ public class Menu {
               Stylist stylist = new Stylist();
               stylist.setSchedule();
               generalMenu();
-
-
-
-
-
     }
+
+    public static void medicine(){
+            StockMedicine();
+        }
+        
 }
