@@ -1,5 +1,7 @@
 package employee;
 
+import patient.Register;
+
 import java.util.Scanner;
 
 public class Doctor extends Employee {
@@ -65,8 +67,15 @@ public class Doctor extends Employee {
                         int selection = sc.nextInt();
                         if (selection == 1) {
                             System.out.println("Date assigned with the doctor: " + doctor1.getName() + " " + doctor1.getSurname() + " on " + monday.getDay());
+                            doctor1.setDay("Monday");
+                            //doctor1.setName(doctor1.getName());
+                            //doctor1.setSurname(doctor1.getSurname());
+
+
+                            //System.out.println(doctor1.toString());
                         } else if (selection == 2) {
                             System.out.println("Date assigned with the doctor: " + doctor2.getName() + " " + doctor2.getSurname() + " on " + monday.getDay());
+                            doctor2.setDay("Monday");
                         }
                     } else if (date == 2) {
                         Schedule tuesday = new Schedule("8AM", "7PM", "Tuesday");
@@ -219,4 +228,13 @@ public class Doctor extends Employee {
         }
 
         }
+
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", day='" + day + '\'' +
+                '}';
     }
+}

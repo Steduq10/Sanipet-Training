@@ -2,10 +2,7 @@ package main;
 
 import employee.Doctor;
 import employee.Stylist;
-import patient.Cat;
-import patient.Dog;
-import patient.Owner;
-import patient.Patient;
+import patient.*;
 
 import java.awt.desktop.SystemEventListener;
 import java.time.LocalDate;
@@ -39,7 +36,7 @@ public class Menu {
                   System.exit(0);
           }
       }
-      public static void ownersInformation(){
+      public static void ownersInformation() {
           System.out.println("********************************");
           System.out.println("\t\tOWNER REGISTRATION");
           System.out.println("********************************");
@@ -77,12 +74,14 @@ public class Menu {
               System.out.println("What's the owner's surnname?: ");
               String surname = sc.nextLine();
               //owner.setSurname(surname);
+
               Owner owner = new Owner(DNI, name, surname, cellphone, age);
               owner.setDNI(response);
               owner.setName(name);
               owner.setSurname(surname);
               owner.setCellphone(cellphone);
               owner.setAge(age);
+
 
               //System.out.println(owner.toString());
               System.out.println();
@@ -101,7 +100,7 @@ public class Menu {
                   switch (select) {
 
                       case 1:
-                          Patient cat = new Cat();
+                          Cat cat = new Cat();
                           //Scanner sc = new Scanner(System.in);
                           System.out.println("********************************");
                           System.out.println("\t\t\tCAT MENU");
@@ -125,16 +124,57 @@ public class Menu {
                           int month = sc.nextInt();
                           System.out.println("Year: ");
                           int year = sc.nextInt();
-                          LocalDate date = LocalDate.of(year,month,day);
+                          LocalDate date = LocalDate.of(year, month, day);
                           cat.setdeworming(date);
                           cat.setClinicNumber(generateClinicNumber);
                           cat.setOwner(owner);
                           //owner.toString();
                           System.out.println(cat.toString());
-                          generalMenu();
+                          //generalMenu();
+
+
+                          System.out.println("*************************************");
+                          System.out.println("\t\tAPPOINTMENTS MENU");
+                          System.out.println("*************************************");
+                          System.out.println();
+                          //Scanner sc = new Scanner(System.in);
+
+                          System.out.println("Which specialist you want to consult today? :\n" +
+                                  "1. Doctor\n" +
+                                  "2. Stylist\n" +
+                                  "3. Main menu\n" +
+                                  "0. Exit");
+                          int option = sc.nextInt();
+                          while (option < 0 || option > 3) {
+                              System.out.println("Please select a valid option");
+                              System.out.println("Which specialist you want to consult today? :\n" +
+                                      "1. Doctor\n" +
+                                      "2. Stylist\n" +
+                                      "3. Main menu\n" +
+                                      "0. Exit");
+                              option = sc.nextInt();
+                          }
+                          if(option ==1){
+                              Doctor doctor = new Doctor();
+                              doctor.setSchedule();
+                              Register register = new Register();
+                              register.setCat(cat);
+                              register.toString();
+                              //doctorAppointment();
+                          }else if(option == 2) {
+                              stylistAppointment();
+                          }else if (option == 3) {
+                              generalMenu();
+                          }else if (option == 4) {
+                              System.out.println("Thank you for you visit");
+                              System.exit(0);
+                          }else {
+
+                              System.out.println("Please select a valid option");
+                          }
                           break;
                       case 2:
-                          Patient dog = new Dog();
+                          Dog dog = new Dog();
                           //Scanner sc = new Scanner(System.in);
                           System.out.println("********************************");
                           System.out.println("\t\t\tDOG MENU");
@@ -150,27 +190,124 @@ public class Menu {
                           System.out.println("Is your dog vaccinated? Y/N: ");
                           statusVaccines = sc.nextLine();
                           dog.setStatusVaccines(statusVaccines);
-
+                          System.out.println("Last date of deparasitization: ");
+                          System.out.println("Day: ");
+                          day = sc.nextInt();
+                          System.out.println("Month: ");
+                          month = sc.nextInt();
+                          System.out.println("Year: ");
+                          year = sc.nextInt();
+                          date = LocalDate.of(year, month, day);
+                          dog.setdeworming(date);
                           generateClinicNumber = dog.getClinicNumber();
                           dog.setClinicNumber(generateClinicNumber);
                           dog.setOwner(owner);
                           //owner.toString();
                           System.out.println(dog.toString());
-                          generalMenu();
+                          //generalMenu();
 
                           //dogMenu();
+
+
+                          System.out.println("*************************************");
+                          System.out.println("\t\tAPPOINTMENTS MENU");
+                          System.out.println("*************************************");
+                          System.out.println();
+                          //Scanner sc = new Scanner(System.in);
+
+                          System.out.println("Which specialist you want to consult today? :\n" +
+                                  "1. Doctor\n" +
+                                  "2. Stylist\n" +
+                                  "3. Main menu\n" +
+                                  "0. Exit");
+                          option = sc.nextInt();
+                          while (option < 0 || option > 3) {
+                              System.out.println("Please select a valid option");
+                              System.out.println("Which specialist you want to consult today? :\n" +
+                                      "1. Doctor\n" +
+                                      "2. Stylist\n" +
+                                      "3. Main menu\n" +
+                                      "0. Exit");
+                              option = sc.nextInt();
+                          }
+                          if(option ==1){
+                              Doctor doctor = new Doctor();
+                              doctor.setSchedule();
+                              Register register = new Register();
+                              register.setDog(dog);
+                              register.toString();
+                              //doctorAppointment();
+                          }else if(option == 2) {
+                              stylistAppointment();
+                          }else if (option == 3) {
+                              generalMenu();
+                          }else if (option == 4) {
+                              System.out.println("Thank you for you visit");
+                              System.exit(0);
+                          }else {
+
+                              System.out.println("Please select a valid option");
+                          }
                           break;
+
                       case 0:
                           System.out.println("Thank you for you visit");
                           break;
                       default:
                           System.out.println("Please select a correct answer");
+                          break;
                   }
+/*
+                  System.out.println("*************************************");
+                  System.out.println("\t\tAPPOINTMENTS MENU");
+                  System.out.println("*************************************");
+                  System.out.println();
+                  //Scanner sc = new Scanner(System.in);
+
+                  System.out.println("Which specialist you want to consult today? :\n" +
+                          "1. Doctor\n" +
+                          "2. Stylist\n" +
+                          "3. Main menu\n" +
+                          "0. Exit");
+                  int option = sc.nextInt();
+                  while (option < 0 || option > 3) {
+                      System.out.println("Please select a valid option");
+                      System.out.println("Which specialist you want to consult today? :\n" +
+                              "1. Doctor\n" +
+                              "2. Stylist\n" +
+                              "3. Main menu\n" +
+                              "0. Exit");
+                      option = sc.nextInt();
+                  }
+                  if(option ==1){
+                      Doctor doctor = new Doctor();
+                      doctor.setSchedule();
+                      //Register register = new Register();
+                      //register.setCat(cat);
+                      doctorAppointment();
+                  }else if(option == 2) {
+                      stylistAppointment();
+                  }else if (option == 3) {
+                      generalMenu();
+                  }else if (option == 4) {
+                      System.out.println("Thank you for you visit");
+                      System.exit(0);
+                  }else {
+
+                      System.out.println("Please select a valid option");
+                  }
+*/
               } while (select != 0);
 
           }
-         // return owner;
+
+
       }
+
+
+
+
+
       /*
       public static void petSelection(){
           System.out.println("Please select an option down below");
@@ -277,6 +414,10 @@ public class Menu {
         switch(option){
             case 1:
                 doctorAppointment();
+
+                Register register = new Register();
+                System.out.println(register.toString());
+                generalMenu();
                 break;
             case 2:
                 stylistAppointment();
@@ -296,13 +437,12 @@ public class Menu {
     public static void doctorAppointment(){
         Doctor doctor = new Doctor();
         doctor.setSchedule();
-        generalMenu();
+        //generalMenu();
     }
-    public static void stylistAppointment(){
-        Stylist stylist = new Stylist();
-        stylist.setSchedule();
-        generalMenu();
-
+    public static void stylistAppointment() {
+              Stylist stylist = new Stylist();
+              stylist.setSchedule();
+              generalMenu();
 
 
 

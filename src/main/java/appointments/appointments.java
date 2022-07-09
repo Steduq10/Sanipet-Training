@@ -3,9 +3,7 @@ package appointments;
 import employee.Schedule;
 import patient.Patient;
 
-import java.util.Date;
-
-public abstract class appointments {
+public abstract class Appointments {
     Patient patient;
     Status status;
     //Date date;
@@ -16,10 +14,10 @@ public abstract class appointments {
     //Schedule sc = new Schedule();
 
 
-    public appointments() {
+    public Appointments() {
     }
 
-    public appointments(Patient patient, Schedule schedule, Service service) {
+    public Appointments(Patient patient, Schedule schedule, Service service) {
         this.patient = patient;
         //this.date = date;
         this.status = Status.NOTSTARTED;

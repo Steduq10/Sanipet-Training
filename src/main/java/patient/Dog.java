@@ -28,6 +28,7 @@ public class Dog extends Patient{
                 "clinicNumber='" + clinicNumber + '\'' +
                 ", name='" + name + '\'' +
                 ", breed='" + breed + '\'' +
+                ", " + owner + '\'' +
                 ", statusVaccines=" + statusVaccines +
                 ", desparasization=" + deworming +
                 '}';
