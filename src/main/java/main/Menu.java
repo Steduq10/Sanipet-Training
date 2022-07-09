@@ -197,45 +197,19 @@ public class Menu {
 
     }
     public static void doctorAppointment(){
-          Doctor doctor = new Doctor();
-        Stylist stylist = new Stylist();
-        Doctor doctor1 = new Doctor("James","Goodman");
-        Doctor doctor2 = new Doctor("Sarah", "Taylor");
-          
-          System.out.println("*************************************");
-          System.out.println("\tDOCTOR MENU");
-          System.out.println("*************************************");
-          System.out.println();
-          System.out.println("Which service you want to select for your pet? :\n" +
-                           "1. General medicine\n" +
-                           "2. Surgery\n" +
-                           "0. Exit");
-          Scanner sc = new Scanner(System.in);
-        int option = sc.nextInt();
-        while(option < 0|| option > 3){
-            System.out.println("Please select a valid option");
-            System.out.println("Which service you want to select for your pet? :\n" +
-                    "1. General medicine\n" +
-                    "2. Surgery\n" +
-                    "0. Exit");
-            option = sc.nextInt();
-        }
-        switch (option){
-            case 1:
-                doctor1.setSchedule();
-                System.out.println("Date assigned with the doctor: " + doctor1.getName() + " " + doctor1.getSurname() );
-                break;
-            case 2:
-                doctor2.setSchedule();
-                System.out.println("Date assigned with the doctor: " + doctor2.getName() + " " + doctor2.getSurname() );
-                break;
-            case 3:
-                generalMenu();
-                break;
-            default:
-                break;
-        }
+        Doctor doctor = new Doctor();
+        doctor.setSchedule();
+        generalMenu();
     }
     public static void stylistAppointment(){
+        Stylist stylist = new Stylist();
+        stylist.setSchedule();
+        generalMenu();
+
+
+
+
+
+
     }
 }
