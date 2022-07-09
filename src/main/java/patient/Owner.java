@@ -73,7 +73,7 @@ public class Owner {
     @Override
     public String toString() {
         String ownerInformation = null;
-        try {
+        //try {
             ownerInformation = "Owner [" +
                     "DNI = " + DNI +
                     " , Name = " + name + " " +
@@ -81,7 +81,7 @@ public class Owner {
                     ", Cellphone = " + cellphone + " " +
                     ", Age = " + age +
                     " ]";
-            String route = "C:\\Users\\steve\\OneDrive\\Documentos\\test\\ownerInformation.txt";
+            /*String route = "C:\\Users\\steve\\OneDrive\\Documentos\\test\\ownerInformation.txt";
             File file = new File(route);
             // Si el archivo no existe es creado
             if (!file.exists()) {
@@ -94,7 +94,7 @@ public class Owner {
             bw.close();
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
         return ownerInformation;
     }
 }

@@ -9,8 +9,6 @@ import java.awt.desktop.SystemEventListener;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-import static appointments.Medicine.StockMedicine;
-
 public class Menu {
       public static void generalMenu (){
           System.out.println();
@@ -443,13 +441,9 @@ public class Menu {
         //generalMenu();
     }
     public static void stylistAppointment() {
-              Stylist stylist = new Stylist();
-              stylist.setSchedule();
-              generalMenu();
+        Stylist stylist = new Stylist();
+        stylist.setSchedule();
+        generalMenu();
     }
 
-    public static void medicine(){
-            StockMedicine();
-        }
-        
 }

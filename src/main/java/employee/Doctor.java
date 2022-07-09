@@ -1,5 +1,6 @@
 package employee;
 
+import appointments.Medicine;
 import patient.Register;
 
 import java.util.Scanner;
@@ -68,6 +69,9 @@ public class Doctor extends Employee {
                         if (selection == 1) {
                             System.out.println("Date assigned with the doctor: " + doctor1.getName() + " " + doctor1.getSurname() + " on " + monday.getDay());
                             doctor1.setDay("Monday");
+                            System.out.println("These are the recommended medicines for general medicine: ");
+                            Medicine general = new Medicine();
+                            general.toString();
                             //doctor1.setName(doctor1.getName());
                             //doctor1.setSurname(doctor1.getSurname());
 

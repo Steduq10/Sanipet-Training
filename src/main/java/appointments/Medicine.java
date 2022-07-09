@@ -1,11 +1,14 @@
 package appointments;
 
 public class Medicine {
-    private String name;
-    private String presentation;
-    private String usage;
-    private String dosis;
-    private int stock;
+    private static String name;
+    private static String presentation;
+    private static String usage;
+    private static String dosis;
+    private static int stock;
+
+    public Medicine() {
+    }
 
     public Medicine(String name, String presentation, String usage, String dosis, int stock) {
         this.name = name;
@@ -23,11 +26,18 @@ public class Medicine {
         this.stock += increaseBy;
     }
 
-    public static void StockMedicine(){
+    public static void stockGeneral(){
         Medicine Marboquin      = new Medicine(  "Marboquin"      , "Pills", "Veterinarian" , "25 mg"  , 10);
         Medicine Ibuprofeno     = new Medicine(  "Ibuprofeno"     , "Pills", "Human"        , "3 mg"   , 10);
+        System.out.println(Marboquin.toString());
+        System.out.println(Ibuprofeno.toString());
+    }
+    public static void stockSurgeryl(){
         Medicine Bismopet       = new Medicine(  "Bismopet"       , "Syrup", "Veterinarian" , "3 mg"   , 10);
         Medicine Benzodiazepina = new Medicine(  "Benzodiazepina" , "Syrup", "Human"        , "50 ml"  , 10);
+    }
+
+    public static void stockPetCare(){
         Medicine Aminomix       = new Medicine(  "Aminomix"       , "Pills", "Veterinarian" , "100 mg" , 10);
         Medicine ArtriTabs      = new Medicine(  "Artri-Tabs"     , "Pills", "Veterinarian" , "100 mg" , 10);
     }
@@ -40,7 +50,6 @@ public class Medicine {
         this.stock = stock;
     }
 
-    @Override
     public String toString() {
         return "Medicine{" +
                 "name='" + name + '\'' +
