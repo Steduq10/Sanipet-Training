@@ -1,5 +1,6 @@
 package patient;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Random;
 import java.util.RandomAccess;
@@ -9,7 +10,7 @@ public class Dog extends Patient{
     public Dog() {
     }
 
-    public Dog(String clinicNumber, String name,Owner owner, String breed, String statusVaccines, Date desparasization) {
+    public Dog(String clinicNumber, String name, Owner owner, String breed, String statusVaccines, LocalDate desparasization) {
         super(clinicNumber, name,owner, breed, statusVaccines, desparasization);
     }
 

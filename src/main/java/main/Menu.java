@@ -8,6 +8,7 @@ import patient.Owner;
 import patient.Patient;
 
 import java.awt.desktop.SystemEventListener;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Menu {
@@ -48,7 +49,7 @@ public class Menu {
           String response;
           int age = sc.nextInt();
           if (age >= 18) {
-             // owner.setAge(age);
+              // owner.setAge(age);
               System.out.println();
               System.out.println("What's the owner's DNI?: ");
               String DNI = sc.nextLine();
@@ -71,12 +72,12 @@ public class Menu {
               System.out.println();
               System.out.println("What's the owner's name?: ");
               String name = sc.nextLine();
-             // owner.setName(name);
+              // owner.setName(name);
               System.out.println();
               System.out.println("What's the owner's surnname?: ");
               String surname = sc.nextLine();
               //owner.setSurname(surname);
-              Owner owner = new Owner(DNI, name, surname, cellphone, age  );
+              Owner owner = new Owner(DNI, name, surname, cellphone, age);
               owner.setDNI(response);
               owner.setName(name);
               owner.setSurname(surname);
@@ -97,7 +98,7 @@ public class Menu {
                   System.out.println("2. Dog");
                   System.out.println("0. Exit");
                   select = Integer.valueOf(sc.nextLine());
-                  switch (select){
+                  switch (select) {
 
                       case 1:
                           Patient cat = new Cat();
@@ -117,6 +118,15 @@ public class Menu {
                           String statusVaccines = sc.nextLine();
                           cat.setStatusVaccines(statusVaccines);
                           String generateClinicNumber = cat.getClinicNumber();
+                          System.out.println("Last date of deparasitization: ");
+                          System.out.println("Day: ");
+                          int day = sc.nextInt();
+                          System.out.println("Month: ");
+                          int month = sc.nextInt();
+                          System.out.println("Year: ");
+                          int year = sc.nextInt();
+                          LocalDate date = LocalDate.of(year,month,day);
+                          cat.setdeworming(date);
                           cat.setClinicNumber(generateClinicNumber);
                           cat.setOwner(owner);
                           //owner.toString();
@@ -124,6 +134,30 @@ public class Menu {
                           generalMenu();
                           break;
                       case 2:
+                          Patient dog = new Dog();
+                          //Scanner sc = new Scanner(System.in);
+                          System.out.println("********************************");
+                          System.out.println("\t\t\tDOG MENU");
+                          System.out.println("********************************");
+                          System.out.println("What's your dog's name?: ");
+                          String nameDog = sc.nextLine();
+                          dog.setName(nameDog);
+                          System.out.println("\n");
+                          System.out.println("What's your dog's breed?: ");
+                          breed = sc.nextLine();
+                          dog.setBreed(breed);
+                          System.out.println("\n");
+                          System.out.println("Is your dog vaccinated? Y/N: ");
+                          statusVaccines = sc.nextLine();
+                          dog.setStatusVaccines(statusVaccines);
+
+                          generateClinicNumber = dog.getClinicNumber();
+                          dog.setClinicNumber(generateClinicNumber);
+                          dog.setOwner(owner);
+                          //owner.toString();
+                          System.out.println(dog.toString());
+                          generalMenu();
+
                           //dogMenu();
                           break;
                       case 0:
@@ -132,7 +166,8 @@ public class Menu {
                       default:
                           System.out.println("Please select a correct answer");
                   }
-              }while (select != 0);
+              } while (select != 0);
+
           }
          // return owner;
       }
@@ -167,28 +202,30 @@ public class Menu {
     /*
     public static void catMenu(){
         Patient cat = new Cat();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("********************************");
-        System.out.println("\t\t\tCAT MENU");
-        System.out.println("********************************");
-        System.out.println("What's your cat's name?: ");
-        String name = sc.nextLine();
-        cat.setName(name);
-        System.out.println("\n");
-        System.out.println("What's your cat's breed?: ");
-        String breed = sc.nextLine();
-        cat.setBreed(breed);
-        System.out.println("\n");
-        System.out.println("Is your cat vaccinated? Y/N: ");
-        String statusVaccines = sc.nextLine();
-        cat.setStatusVaccines(statusVaccines);
-        cat.setClinicNumber();
-        System.out.println(cat.toString());
-        //Owner owner = new Owner();
-        //owner.toString();
-        cat.toString();
-        generalMenu();
-    }
+                          //Scanner sc = new Scanner(System.in);
+                          System.out.println("********************************");
+                          System.out.println("\t\t\tCAT MENU");
+                          System.out.println("********************************");
+                          System.out.println("What's your cat's name?: ");
+                          String nameCat = sc.nextLine();
+                          cat.setName(nameCat);
+                          System.out.println("\n");
+                          System.out.println("What's your cat's breed?: ");
+                          String breed = sc.nextLine();
+                          cat.setBreed(breed);
+                          System.out.println("\n");
+                          System.out.println("Is your cat vaccinated? Y/N: ");
+                          String statusVaccines = sc.nextLine();
+                          cat.setStatusVaccines(statusVaccines);
+                          String generateClinicNumber = cat.getClinicNumber();
+                          cat.setClinicNumber(generateClinicNumber);
+                          cat.setOwner(owner);
+                          //owner.toString();
+                          System.out.println(cat.toString());
+                          generalMenu();
+
+    }*/
+    /*
     public static void dogMenu(){
           Patient dog = new Dog();
           Scanner sc = new Scanner(System.in);

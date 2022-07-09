@@ -1,8 +1,8 @@
 package patient;
 
+import java.time.LocalDate;
 import java.util.Date;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
+
 
 import static java.lang.Math.round;
 
@@ -13,7 +13,7 @@ public abstract class  Patient {
     protected String breed;
     protected Owner owner;
     protected String statusVaccines;
-    protected Date deworming;
+    protected LocalDate deworming;
 
     //constructor
 
@@ -21,7 +21,7 @@ public abstract class  Patient {
     public Patient() {
     }
 
-    public Patient(String clinicNumber, String name,Owner owner, String breed, String statusVaccines, Date deworming) {
+    public Patient(String clinicNumber, String name,Owner owner, String breed, String statusVaccines, LocalDate deworming) {
         this.clinicNumber = clinicNumber;
         this.name = name;
         this.breed = breed; 
@@ -85,11 +85,11 @@ public abstract class  Patient {
         this.statusVaccines = statusVaccines;
     }
 
-    public Date getdeworming() {
+    public LocalDate getdeworming() {
         return deworming;
     }
 
-    public void setdeworming(Date deworming) {
+    public void setdeworming(LocalDate deworming) {
         this.deworming = deworming;
     }
 
