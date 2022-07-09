@@ -21,11 +21,11 @@ public abstract class  Patient {
     public Patient() {
     }
 
-    public Patient(String clinicNumber, String name, String breed, String statusVaccines, Date deworming) {
+    public Patient(String clinicNumber, String name,Owner owner, String breed, String statusVaccines, Date deworming) {
         this.clinicNumber = clinicNumber;
         this.name = name;
         this.breed = breed; 
-        //this.owner = owner;
+        this.owner = owner;
         this.statusVaccines = statusVaccines;
         this.deworming = deworming;
     }
@@ -38,9 +38,9 @@ public abstract class  Patient {
         return clinicNumber;
     }
 
-    public String setClinicNumber() {
+    public void setClinicNumber(String clinicNumber) {
         this.clinicNumber = clinicNumber;
-        return String.valueOf(ThreadLocalRandom.current().nextInt(1, 999999 + 1));
+        //return String.valueOf(ThreadLocalRandom.current().nextInt(1, 999999 + 1));
     }
 
     public String getName() {
@@ -60,9 +60,6 @@ public abstract class  Patient {
     }
 
     public Owner getOwner() {
-        Owner owner = new Owner();
-        String completeName = owner.getName() + " " + owner.getSurname();
-        //owner = completeName;
         return owner;
     }
 
@@ -97,6 +94,9 @@ public abstract class  Patient {
     }
 
     //method to generate the clinicNumber
+    public  String generateClinicNumber;
+
+
 
 
 

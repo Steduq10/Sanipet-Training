@@ -38,17 +38,17 @@ public class Menu {
                   System.exit(0);
           }
       }
-      public static Owner ownersInformation(){
+      public static void ownersInformation(){
           System.out.println("********************************");
           System.out.println("\t\tOWNER REGISTRATION");
           System.out.println("********************************");
           System.out.println("What's the owner's age?: ");
-          Owner owner = new Owner();
+          //Owner owner = new Owner();
           Scanner sc = new Scanner(System.in);
           String response;
           int age = sc.nextInt();
           if (age >= 18) {
-              owner.setAge(age);
+             // owner.setAge(age);
               System.out.println();
               System.out.println("What's the owner's DNI?: ");
               String DNI = sc.nextLine();
@@ -58,7 +58,7 @@ public class Menu {
                   System.out.println("What's the owner's DNI?: ");
                   response = sc.nextLine();
               }
-              owner.setDNI(response);
+              //owner.setDNI(response);
               System.out.println();
               System.out.println("What's the owner's cellphone?: ");
               String cellphone = sc.nextLine();
@@ -67,21 +67,76 @@ public class Menu {
                   System.out.println("What's the owner's cellphone?: ");
                   cellphone = sc.nextLine();
               }
-              owner.setCellphone(response);
+              //owner.setCellphone(response);
               System.out.println();
               System.out.println("What's the owner's name?: ");
-              response = sc.nextLine();
-              owner.setName(response);
+              String name = sc.nextLine();
+             // owner.setName(name);
               System.out.println();
               System.out.println("What's the owner's surnname?: ");
-              response = sc.nextLine();
-              owner.setSurname(response);
-              System.out.println(owner.toString());
+              String surname = sc.nextLine();
+              //owner.setSurname(surname);
+              Owner owner = new Owner(DNI, name, surname, cellphone, age  );
+              owner.setDNI(response);
+              owner.setName(name);
+              owner.setSurname(surname);
+              owner.setCellphone(cellphone);
+              owner.setAge(age);
+
+              //System.out.println(owner.toString());
               System.out.println();
-              petSelection();
+              //petSelection();
+              System.out.println("********************************");
+              System.out.println("\t\tPATIENT REGISTRATION");
+              System.out.println("********************************");
+              System.out.println("Please select an option down below");
+              //Scanner sc = new Scanner(System.in);
+              int select = 0;
+              do {
+                  System.out.println("1. Cat");
+                  System.out.println("2. Dog");
+                  System.out.println("0. Exit");
+                  select = Integer.valueOf(sc.nextLine());
+                  switch (select){
+
+                      case 1:
+                          Patient cat = new Cat();
+                          //Scanner sc = new Scanner(System.in);
+                          System.out.println("********************************");
+                          System.out.println("\t\t\tCAT MENU");
+                          System.out.println("********************************");
+                          System.out.println("What's your cat's name?: ");
+                          String nameCat = sc.nextLine();
+                          cat.setName(nameCat);
+                          System.out.println("\n");
+                          System.out.println("What's your cat's breed?: ");
+                          String breed = sc.nextLine();
+                          cat.setBreed(breed);
+                          System.out.println("\n");
+                          System.out.println("Is your cat vaccinated? Y/N: ");
+                          String statusVaccines = sc.nextLine();
+                          cat.setStatusVaccines(statusVaccines);
+                          String generateClinicNumber = cat.getClinicNumber();
+                          cat.setClinicNumber(generateClinicNumber);
+                          cat.setOwner(owner);
+                          //owner.toString();
+                          System.out.println(cat.toString());
+                          generalMenu();
+                          break;
+                      case 2:
+                          //dogMenu();
+                          break;
+                      case 0:
+                          System.out.println("Thank you for you visit");
+                          break;
+                      default:
+                          System.out.println("Please select a correct answer");
+                  }
+              }while (select != 0);
           }
-          return owner;
+         // return owner;
       }
+      /*
       public static void petSelection(){
           System.out.println("Please select an option down below");
           Scanner sc = new Scanner(System.in);
@@ -107,6 +162,9 @@ public class Menu {
                 }
           }while (response != 0);
     }
+
+       */
+    /*
     public static void catMenu(){
         Patient cat = new Cat();
         Scanner sc = new Scanner(System.in);
@@ -154,6 +212,8 @@ public class Menu {
           dog.setClinicNumber();
           generalMenu();
     }
+
+     */
     public static void appointmentMenu(){
          System.out.println("*************************************");
          System.out.println("\t\tAPPOINTMENTS MENU");

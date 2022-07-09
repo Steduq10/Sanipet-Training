@@ -14,11 +14,10 @@ public class Owner {
     }
 
 
-    public Owner(String DNI, String name, String surname, String completeName, String cellphone, int age) {
+    public Owner(String DNI, String name, String surname, String cellphone, int age) {
         this.DNI = DNI;
         this.name = name;
         this.surname = surname;
-        this.completeName = completeName;
         this.cellphone = cellphone;
         this.age = age;
     }
