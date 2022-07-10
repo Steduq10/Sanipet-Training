@@ -1,5 +1,9 @@
 package employee;
 
+import bussiness.BussinesImpl;
+import bussiness.IBussiness;
+
+import java.io.*;
 import java.util.Scanner;
 
 public class Stylist extends Employee {
@@ -50,8 +54,36 @@ public class Stylist extends Employee {
                 int selection = sc.nextInt();
                 if (selection == 1) {
                     System.out.println("Date assigned with the doctor: " + stylist1.getName() + " " + stylist1.getSurname() + " on " + monday.getDay());
+                    IBussiness data = new BussinesImpl();
+                    data.addStylist("history.txt",stylist1);
+                    File file = new File("history.txt");
+                    try {
+                        BufferedReader obj = new BufferedReader(new FileReader(file));
+                        String read;
+                        while ((read = obj.readLine()) != null ){
+                            System.out.println(read);
+                        }
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 } else if (selection == 2) {
                     System.out.println("Date assigned with the doctor: " + stylist2.getName() + " " + stylist2.getSurname() + " on " + monday.getDay());
+                    IBussiness data = new BussinesImpl();
+                    data.addStylist("history.txt",stylist2);
+                    File file = new File("history.txt");
+                    try {
+                        BufferedReader obj = new BufferedReader(new FileReader(file));
+                        String read;
+                        while ((read = obj.readLine()) != null ){
+                            System.out.println(read);
+                        }
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             } else if (date == 2) {
                 Schedule tuesday = new Schedule("8AM", "7PM", "Tuesday");
@@ -63,8 +95,36 @@ public class Stylist extends Employee {
                 int selection = sc.nextInt();
                 if (selection == 1) {
                     System.out.println("Date assigned with the doctor: " + stylist1.getName() + " " + stylist1.getSurname() + " on " + tuesday.getDay());
+                    IBussiness data = new BussinesImpl();
+                    data.addStylist("history.txt",stylist1);
+                    File file = new File("history.txt");
+                    try {
+                        BufferedReader obj = new BufferedReader(new FileReader(file));
+                        String read;
+                        while ((read = obj.readLine()) != null ){
+                            System.out.println(read);
+                        }
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 } else if (selection == 2) {
                     System.out.println("Date assigned with the doctor: " + stylist2.getName() + " " + stylist2.getSurname() + " on " + tuesday.getDay());
+                    IBussiness data = new BussinesImpl();
+                    data.addStylist("history.txt",stylist2);
+                    File file = new File("history.txt");
+                    try {
+                        BufferedReader obj = new BufferedReader(new FileReader(file));
+                        String read;
+                        while ((read = obj.readLine()) != null ){
+                            System.out.println(read);
+                        }
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             } else if (date == 3) {
 
@@ -77,8 +137,37 @@ public class Stylist extends Employee {
                 int selection = sc.nextInt();
                 if (selection == 1) {
                     System.out.println("Date assigned with the doctor: " + stylist1.getName() + " " + stylist1.getSurname() + " on " + wednesday.getDay());
+                    IBussiness data = new BussinesImpl();
+                    data.addStylist("history.txt",stylist1);
+                    File file = new File("history.txt");
+                    try {
+                        BufferedReader obj = new BufferedReader(new FileReader(file));
+                        String read;
+                        while ((read = obj.readLine()) != null ){
+                            System.out.println(read);
+                        }
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 } else if (selection == 2) {
                     System.out.println("Date assigned with the doctor: " + stylist2.getName() + " " + stylist2.getSurname() + " on " + wednesday.getDay());
+                    IBussiness data = new BussinesImpl();
+                    data.addStylist("history.txt",stylist2);
+                    File file = new File("history.txt");
+                    try {
+                        BufferedReader obj = new BufferedReader(new FileReader(file));
+                        String read;
+                        while ((read = obj.readLine()) != null ){
+                            System.out.println(read);
+                        }
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
                 }
 
             }
@@ -93,8 +182,36 @@ public class Stylist extends Employee {
                 int selection = sc.nextInt();
                 if (selection == 1) {
                     System.out.println("Date assigned with the doctor: " + stylist1.getName() + " " + stylist1.getSurname() + " on " + thursday.getDay());
+                    IBussiness data = new BussinesImpl();
+                    data.addStylist("history.txt",stylist1);
+                    File file = new File("history.txt");
+                    try {
+                        BufferedReader obj = new BufferedReader(new FileReader(file));
+                        String read;
+                        while ((read = obj.readLine()) != null ){
+                            System.out.println(read);
+                        }
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 } else if (selection == 2) {
                     System.out.println("Date assigned with the doctor: " + stylist2.getName() + " " + stylist2.getSurname() + " on " + thursday.getDay());
+                    IBussiness data = new BussinesImpl();
+                    data.addStylist("history.txt",stylist2);
+                    File file = new File("history.txt");
+                    try {
+                        BufferedReader obj = new BufferedReader(new FileReader(file));
+                        String read;
+                        while ((read = obj.readLine()) != null ){
+                            System.out.println(read);
+                        }
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
             else if (date == 5) {
@@ -108,8 +225,36 @@ public class Stylist extends Employee {
                 int selection = sc.nextInt();
                 if (selection == 1) {
                     System.out.println("Date assigned with the doctor: " + stylist1.getName() + " " + stylist1.getSurname() + " on " + friday.getDay());
+                    IBussiness data = new BussinesImpl();
+                    data.addStylist("history.txt",stylist1);
+                    File file = new File("history.txt");
+                    try {
+                        BufferedReader obj = new BufferedReader(new FileReader(file));
+                        String read;
+                        while ((read = obj.readLine()) != null ){
+                            System.out.println(read);
+                        }
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 } else if (selection == 2) {
                     System.out.println("Date assigned with the doctor: " + stylist2.getName() + " " + stylist2.getSurname() + " on " + friday.getDay());
+                    IBussiness data = new BussinesImpl();
+                    data.addStylist("history.txt",stylist2);
+                    File file = new File("history.txt");
+                    try {
+                        BufferedReader obj = new BufferedReader(new FileReader(file));
+                        String read;
+                        while ((read = obj.readLine()) != null ){
+                            System.out.println(read);
+                        }
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
             else {
@@ -126,8 +271,36 @@ public class Stylist extends Employee {
             int selection = sc.nextInt();
             if (selection == 1) {
                 System.out.println("Date assigned with the doctor: " + stylist1.getName() + " " + stylist1.getSurname() + " on " + saturday.getDay());
+                IBussiness data = new BussinesImpl();
+                data.addStylist("history.txt",stylist1);
+                File file = new File("history.txt");
+                try {
+                    BufferedReader obj = new BufferedReader(new FileReader(file));
+                    String read;
+                    while ((read = obj.readLine()) != null ){
+                        System.out.println(read);
+                    }
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             } else if (selection == 2) {
                 System.out.println("Date assigned with the doctor: " + stylist2.getName() + " " + stylist2.getSurname() + " on " + saturday.getDay());
+                IBussiness data = new BussinesImpl();
+                data.addStylist("history.txt",stylist2);
+                File file = new File("history.txt");
+                try {
+                    BufferedReader obj = new BufferedReader(new FileReader(file));
+                    String read;
+                    while ((read = obj.readLine()) != null ){
+                        System.out.println(read);
+                    }
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }

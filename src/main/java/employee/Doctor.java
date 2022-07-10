@@ -1,8 +1,9 @@
 package employee;
 
-import appointments.Medicine;
-import patient.Register;
+import bussiness.BussinesImpl;
+import bussiness.IBussiness;
 
+import java.io.*;
 import java.util.Scanner;
 
 public class Doctor extends Employee {
@@ -69,17 +70,38 @@ public class Doctor extends Employee {
                         if (selection == 1) {
                             System.out.println("Date assigned with the doctor: " + doctor1.getName() + " " + doctor1.getSurname() + " on " + monday.getDay());
                             doctor1.setDay("Monday");
-                            System.out.println("These are the recommended medicines for general medicine: ");
-                            Medicine general = new Medicine();
-                            general.toString();
-                            //doctor1.setName(doctor1.getName());
-                            //doctor1.setSurname(doctor1.getSurname());
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor1);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
 
-
-                            //System.out.println(doctor1.toString());
                         } else if (selection == 2) {
                             System.out.println("Date assigned with the doctor: " + doctor2.getName() + " " + doctor2.getSurname() + " on " + monday.getDay());
                             doctor2.setDay("Monday");
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor2);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
                     } else if (date == 2) {
                         Schedule tuesday = new Schedule("8AM", "7PM", "Tuesday");
@@ -91,8 +113,38 @@ public class Doctor extends Employee {
                         int selection = sc.nextInt();
                         if (selection == 1) {
                             System.out.println("Date assigned with the doctor: " + doctor1.getName() + " " + doctor1.getSurname() + " on " + tuesday.getDay());
+                            doctor1.setDay("Tuesday");
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor1);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         } else if (selection == 2) {
                             System.out.println("Date assigned with the doctor: " + doctor2.getName() + " " + doctor2.getSurname() + " on " + tuesday.getDay());
+                            doctor2.setDay("tuesday");
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor2);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
 
                     } else if (date == 3) {
@@ -106,8 +158,38 @@ public class Doctor extends Employee {
                         int selection = sc.nextInt();
                         if (selection == 1) {
                             System.out.println("Date assigned with the doctor: " + doctor1.getName() + " " + doctor1.getSurname() + " on " + wednesday.getDay());
+                            doctor1.setDay("Wednesday");
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor1);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         } else if (selection == 2) {
                             System.out.println("Date assigned with the doctor: " + doctor2.getName() + " " + doctor2.getSurname() + " on " + wednesday.getDay());
+                            doctor2.setDay("Wednesday");
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor2);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
 
 
@@ -125,19 +207,63 @@ public class Doctor extends Employee {
                     if (date == 1) {
                         Schedule thursday = new Schedule("8AM", "7PM", "Thursday");
                         this.schedules.add(thursday);
-                        //System.out.println("Date assigned on " + thursday.getDay());
                         System.out.println("Date assigned with the doctor: " + doctor3.getName() + " " + doctor3.getSurname() + " on " + thursday.getDay());
+                        doctor3.setDay("thursday");
+                        IBussiness data = new BussinesImpl();
+                        data.addDoctor("history.txt",doctor3);
+                        File file = new File("history.txt");
+                        try {
+                            BufferedReader obj = new BufferedReader(new FileReader(file));
+                            String read;
+                            while ((read = obj.readLine()) != null ){
+                                System.out.println(read);
+                            }
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
 
                     } else if (date == 2) {
                         Schedule friday = new Schedule("8AM", "7PM", "Friday");
                         this.schedules.add(friday);
                         //System.out.println("Date assigned on " + friday.getDay());
                         System.out.println("Date assigned with the doctor: " + doctor3.getName() + " " + doctor3.getSurname() + " on " + friday.getDay());
+                        doctor3.setDay("Friday");
+                        IBussiness data = new BussinesImpl();
+                        data.addDoctor("history.txt",doctor3);
+                        File file = new File("history.txt");
+                        try {
+                            BufferedReader obj = new BufferedReader(new FileReader(file));
+                            String read;
+                            while ((read = obj.readLine()) != null ){
+                                System.out.println(read);
+                            }
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     } else if (date == 3) {
                         Schedule saturday = new Schedule("8AM", "7PM", "Saturday");
                         this.schedules.add(saturday);
                         //System.out.println("Date assigned on " + saturday.getDay());
                         System.out.println("Date assigned with the doctor: " + doctor3.getName() + " " + doctor3.getSurname() + " on " + saturday.getDay());
+                        doctor3.setDay("Saturday");
+                        IBussiness data = new BussinesImpl();
+                        data.addDoctor("history.txt",doctor3);
+                        File file = new File("history.txt");
+                        try {
+                            BufferedReader obj = new BufferedReader(new FileReader(file));
+                            String read;
+                            while ((read = obj.readLine()) != null ){
+                                System.out.println(read);
+                            }
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                 }
                 break;
@@ -167,8 +293,38 @@ public class Doctor extends Employee {
                         int selection = sc.nextInt();
                         if (selection == 1) {
                             System.out.println("Date assigned with the doctor: " + doctor1.getName() + " " + doctor1.getSurname() + " on " + monday.getDay());
+                            doctor1.setDay("Monday");
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor1);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         } else if (selection == 2) {
                             System.out.println("Date assigned with the doctor: " + doctor2.getName() + " " + doctor2.getSurname() + " on " + monday.getDay());
+                            doctor2.setDay("Monday");
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor2);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
                     } else if (date == 2) {
                         Schedule tuesday = new Schedule("8AM", "7PM", "Tuesday");
@@ -180,8 +336,38 @@ public class Doctor extends Employee {
                         int selection = sc.nextInt();
                         if (selection == 1) {
                             System.out.println("Date assigned with the doctor: " + doctor1.getName() + " " + doctor1.getSurname() + " on " + tuesday.getDay());
+                            doctor1.setDay("tuesday");
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor1);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         } else if (selection == 2) {
                             System.out.println("Date assigned with the doctor: " + doctor2.getName() + " " + doctor2.getSurname() + " on " + tuesday.getDay());
+                            doctor2.setDay("tuesday");
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor2);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
 
                     } else if (date == 3) {
@@ -195,8 +381,38 @@ public class Doctor extends Employee {
                         int selection = sc.nextInt();
                         if (selection == 1) {
                             System.out.println("Date assigned with the doctor: " + doctor1.getName() + " " + doctor1.getSurname() + " on " + wednesday.getDay());
+                            doctor1.setDay("Wednesday");
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor1);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         } else if (selection == 2) {
                             System.out.println("Date assigned with the doctor: " + doctor2.getName() + " " + doctor2.getSurname() + " on " + wednesday.getDay());
+                            doctor2.setDay("Wednesday");
+                            IBussiness data = new BussinesImpl();
+                            data.addDoctor("history.txt",doctor2);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                         }
 
 
@@ -216,17 +432,61 @@ public class Doctor extends Employee {
                         this.schedules.add(thursday);
                         //System.out.println("Date assigned on " + thursday.getDay());
                         System.out.println("Date assigned with the doctor: " + doctor3.getName() + " " + doctor3.getSurname() + " on " + thursday.getDay());
-
+                        doctor3.setDay("Thursday");
+                        IBussiness data = new BussinesImpl();
+                        data.addDoctor("history.txt",doctor3);
+                        File file = new File("history.txt");
+                        try {
+                            BufferedReader obj = new BufferedReader(new FileReader(file));
+                            String read;
+                            while ((read = obj.readLine()) != null ){
+                                System.out.println(read);
+                            }
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     } else if (date == 2) {
                         Schedule friday = new Schedule("8AM", "7PM", "Friday");
                         this.schedules.add(friday);
                         //System.out.println("Date assigned on " + friday.getDay());
                         System.out.println("Date assigned with the doctor: " + doctor3.getName() + " " + doctor3.getSurname() + " on " + friday.getDay());
+                        doctor3.setDay("Friday");
+                        IBussiness data = new BussinesImpl();
+                        data.addDoctor("history.txt",doctor3);
+                        File file = new File("history.txt");
+                        try {
+                            BufferedReader obj = new BufferedReader(new FileReader(file));
+                            String read;
+                            while ((read = obj.readLine()) != null ){
+                                System.out.println(read);
+                            }
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     } else if (date == 3) {
                         Schedule saturday = new Schedule("8AM", "7PM", "Saturday");
                         this.schedules.add(saturday);
                         //System.out.println("Date assigned on " + saturday.getDay());
                         System.out.println("Date assigned with the doctor: " + doctor3.getName() + " " + doctor3.getSurname() + " on " + saturday.getDay());
+                        doctor3.setDay("Saturday");
+                        IBussiness data = new BussinesImpl();
+                        data.addDoctor("history.txt",doctor3);
+                        File file = new File("history.txt");
+                        try {
+                            BufferedReader obj = new BufferedReader(new FileReader(file));
+                            String read;
+                            while ((read = obj.readLine()) != null ){
+                                System.out.println(read);
+                            }
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                 }
         }

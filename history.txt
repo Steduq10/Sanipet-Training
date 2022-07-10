@@ -1,0 +1,2 @@
+Register complete correctly [ Clinic History Number = 569969, Name = luna, Breed = per, Owner [DNI = 0123456789 , Name = pepe , Surname = per , Cellphone = 0123456789 , Age = 18 ], Vaccines status = y, De-worming date = 2020-10-15]
+Doctor{name='Sarah', surname='Taylor', day='tuesday'}

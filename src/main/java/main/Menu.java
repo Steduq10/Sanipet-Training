@@ -2,17 +2,18 @@
 package main;
 
 import appointments.Appointments;
-import appointments.Medicine;
+import bussiness.BussinesImpl;
+import bussiness.IBussiness;
 import employee.Doctor;
 import employee.Stylist;
 import patient.Cat;
 import patient.Dog;
 import patient.Owner;
-import patient.Patient;
 
-import java.awt.desktop.SystemEventListener;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.Scanner;
+
 public class Menu {
         public static void generalMenu (){
             System.out.println();
@@ -36,8 +37,6 @@ public class Menu {
                 case 2:
                     appointmentMenu();
                     break;
-                case 4:
-                    totalStockAvailable();
                 case 5:
                     System.out.println("Thank you for visiting");
                     System.exit(0);
@@ -47,6 +46,8 @@ public class Menu {
             System.out.println("********************************");
             System.out.println("\t\tOWNER REGISTRATION");
             System.out.println("********************************");
+            IBussiness data = new BussinesImpl();
+            data.starthistory();
             System.out.println("What's the owner's age?: ");
             Scanner sc = new Scanner(System.in);
             String response;
@@ -94,10 +95,11 @@ public class Menu {
                     select = Integer.valueOf(sc.nextLine());
                     switch (select) {
                         case 1:
-                            Patient cat = new Cat();
+                            Cat cat = new Cat();
                             System.out.println("********************************");
                             System.out.println("\t\t\tCAT MENU");
                             System.out.println("********************************");
+
                             System.out.println("What's your cat's name?: ");
                             String nameCat = sc.nextLine();
                             cat.setName(nameCat);
@@ -121,14 +123,28 @@ public class Menu {
                             cat.setdeworming(date);
                             cat.setClinicNumber(generateClinicNumber);
                             cat.setOwner(owner);
-                            System.out.println(cat.toString());
+                            //System.out.println(cat.toString());
+                            data.addCat("history.txt",cat);
+                            File file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                             appointmentMenu();
                             break;
                         case 2:
-                            Patient dog = new Dog();
+                            Dog dog = new Dog();
                             System.out.println("********************************");
                             System.out.println("\t\t\tDOG MENU");
                             System.out.println("********************************");
+
                             System.out.println("What's your dog's name?: ");
                             String nameDog = sc.nextLine();
                             dog.setName(nameDog);
@@ -143,7 +159,21 @@ public class Menu {
                             generateClinicNumber = dog.getClinicNumber();
                             dog.setClinicNumber(generateClinicNumber);
                             dog.setOwner(owner);
-                            System.out.println(dog.toString());
+                            //System.out.println(dog.toString());
+                            data = new BussinesImpl();
+                            data.addDog("history.txt",dog);
+                            file = new File("history.txt");
+                            try {
+                                BufferedReader obj = new BufferedReader(new FileReader(file));
+                                String read;
+                                while ((read = obj.readLine()) != null ){
+                                    System.out.println(read);
+                                }
+                            } catch (FileNotFoundException e) {
+                                throw new RuntimeException(e);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
                             appointmentMenu();
                             break;
                         case 0:
@@ -210,14 +240,6 @@ public class Menu {
             state.StatusNotStarted();
             generalMenu();
         }
-
-        public static void totalStockAvailable(){
-            System.out.println("********************************");
-            System.out.println("\t\tTOTAL EXISTING STOCK");
-            System.out.println("********************************");
-            Medicine totalStock = new Medicine();
-        }
-
     }
 
 

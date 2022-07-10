@@ -1,7 +1,5 @@
 package employee;
 
-import java.time.DayOfWeek;
-
 
 public class Schedule {
 
