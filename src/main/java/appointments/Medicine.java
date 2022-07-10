@@ -56,14 +56,14 @@ public class Medicine {
     }
 
     public void GlobalStock (){
-        Medicine Marboquin      = new Medicine(  "Marboquin"      , "Pills", "Veterinarian" , "25 mg"  , 10,5);
-        Medicine Ibuprofeno     = new Medicine(  "Ibuprofeno"     , "Pills", "Human"        , "3 mg"   , 10,5);
-        Medicine Bismopet       = new Medicine(  "Bismopet"       , "Syrup", "Veterinarian" , "3 mg"   , 10,5);
-        Medicine Benzodiazepina = new Medicine(  "Benzodiazepina" , "Syrup", "Human"        , "50 ml"  , 10,5);
-        Medicine Aminomix       = new Medicine(  "Aminomix"       , "Pills", "Veterinarian" , "100 mg" , 10,5);
-        Medicine ArtriTabs      = new Medicine(  "Artri-Tabs"     , "Pills", "Veterinarian" , "100 mg" , 10,5);
-        Medicine Asuntol        = new Medicine("Asuntol", "Pet-care","Veterinarian","120 g",10,5);
-        Medicine Dinki          = new Medicine("Dinki", "Pet-care","Veterinarian","200 ml",10,5);
+        Medicine Marboquin      = new Medicine(  "Marboquin"      , "Pills"    , "Veterinarian" , "25 mg"  , 10,5);
+        Medicine Ibuprofeno     = new Medicine(  "Ibuprofeno"     , "Pills"    , "Human"        , "3 mg"   , 10,5);
+        Medicine Bismopet       = new Medicine(  "Bismopet"       , "Syrup"    , "Veterinarian" , "3 mg"   , 10,5);
+        Medicine Benzodiazepina = new Medicine(  "Benzodiazepina" , "Syrup"    , "Human"        , "50 ml"  , 10,5);
+        Medicine Aminomix       = new Medicine(  "Aminomix"       , "Pills"    , "Veterinarian" , "100 mg" , 10,5);
+        Medicine ArtriTabs      = new Medicine(  "Artri-Tabs"     , "Pills"    , "Veterinarian" , "100 mg" , 10,5);
+        Medicine Asuntol        = new Medicine(  "Asuntol"        , "Pet-care" , "Veterinarian" , "120 g"  , 10,5);
+        Medicine Dinki          = new Medicine(  "Dinki"          , "Pet-care" , "Veterinarian" , "200 ml" , 10,5);
         Scanner sc = new Scanner(System.in);
         System.out.println("Which type of medicine do you need:\n" +
                 "1. Pills\n" +
