@@ -6,31 +6,17 @@ public class Medicine {
     private static String name;
     private static String presentation;
     private static String usage;
-    private static String dosis;
+    private static String dose;
     private static int stock;
 
     private static int price;
     public Medicine() {
     }
 
-    public Medicine(String name, String presentation, String usage, String dosis, int stock, int price) {
+    public Medicine(String name, int stock) {
         this.name = name;
-        this.presentation = presentation;
-        this.usage = usage;
-        this.dosis = dosis;
         this.stock = stock;
-        this.price = price;
     }
-
-    public void decreaseStock(int decreaseBy){
-        this.stock -= decreaseBy;
-    }
-
-    public void increaseStock(int increaseBy){
-        this.stock += increaseBy;
-    }
-
-
     public String getName() {
         return name;
     }
@@ -38,32 +24,32 @@ public class Medicine {
     public void setName(String name) {
         this.name = name;
     }
-
     public int getStock() {
         return stock;
     }
-
     public void setStock(int stock) {
         this.stock = stock;
     }
-
     public static int getPrice() {
         return price;
     }
-
     public static void setPrice(int price) {
         Medicine.price = price;
     }
-
     public void GlobalStock (){
-        Medicine Marboquin      = new Medicine(  "Marboquin"      , "Pills"    , "Veterinarian" , "25 mg"  , 10,5);
-        Medicine Ibuprofeno     = new Medicine(  "Ibuprofeno"     , "Pills"    , "Human"        , "3 mg"   , 10,5);
-        Medicine Bismopet       = new Medicine(  "Bismopet"       , "Syrup"    , "Veterinarian" , "3 mg"   , 10,5);
-        Medicine Benzodiazepina = new Medicine(  "Benzodiazepina" , "Syrup"    , "Human"        , "50 ml"  , 10,5);
-        Medicine Aminomix       = new Medicine(  "Aminomix"       , "Pills"    , "Veterinarian" , "100 mg" , 10,5);
-        Medicine ArtriTabs      = new Medicine(  "Artri-Tabs"     , "Pills"    , "Veterinarian" , "100 mg" , 10,5);
-        Medicine Asuntol        = new Medicine(  "Asuntol"        , "Pet-care" , "Veterinarian" , "120 g"  , 10,5);
-        Medicine Dinki          = new Medicine(  "Dinki"          , "Pet-care" , "Veterinarian" , "200 ml" , 10,5);
+
+        Medicine Marboquin      = new Medicine();
+        Medicine Ibuprofeno     = new Medicine();
+        //Medicine Bismopet       = new Medicine(  "Bismopet"       , "Syrup"    , "Veterinarian" , "3 mg"   , 10,5);
+        //Medicine Benzodiazepina = new Medicine(  "Benzodiazepina" , "Syrup"    , "Human"        , "50 ml"  , 10,5);
+        //Medicine Aminomix       = new Medicine(  "Aminomix"       , "Pills"    , "Veterinarian" , "100 mg" , 10,5);
+        //Medicine ArtriTabs      = new Medicine(  "Artri-Tabs"     , "Pills"    , "Veterinarian" , "100 mg" , 10,5);
+        //Medicine Asuntol        = new Medicine(  "Asuntol"        , "Pet-care" , "Veterinarian" , "120 g"  , 10,5);
+        //Medicine Dinki          = new Medicine(  "Dinki"          , "Pet-care" , "Veterinarian" , "200 ml" , 10,5);
+        Marboquin.setName("Marboquin");
+        Marboquin.setStock(10);
+        Ibuprofeno.setName("Ibuprofeno");
+        Ibuprofeno.setStock(10);
         Scanner sc = new Scanner(System.in);
         System.out.println("Which type of medicine do you need:\n" +
                 "1. Pills\n" +
@@ -80,19 +66,19 @@ public class Medicine {
                         "");
                 int pill = sc.nextInt();
                 if (pill == 1){
-                    System.out.println("What quantity of stock do you need?:\n ");
+                    System.out.println("How much "+ Marboquin.getName() + " quantity in stock do you need?:\n ");
                     int quantity = sc.nextInt();
                     if(quantity <= Marboquin.getStock()) {
                         System.out.println("You bougth " + quantity + " units of " + Marboquin.getName());
-                        int stock = Marboquin.getStock() - quantity;
-                        Marboquin.setStock(stock);
+                        int marboStock = Marboquin.getStock() - quantity;
+                        Marboquin.setStock(marboStock);
                         System.out.println(Marboquin.getStock() + " Marboquin remaining in stock");
 
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Marboquin.getStock() + "units");
                     }
                 }else if(pill == 2) {
-                    System.out.println("What quantity of stock do you need?:\n ");
+                    System.out.println("How much "+ Ibuprofeno.getName() + " quantity in stock do you need?:\n");
                     int quantity = sc.nextInt();
                     if (quantity <= Ibuprofeno.getStock()){
                         System.out.println("You bougth " + quantity + " units of " + Ibuprofeno.getName() );
@@ -101,7 +87,7 @@ public class Medicine {
                         System.out.println(Ibuprofeno.getStock() + " Ibuprofeno remaining in stock");
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Ibuprofeno.getStock() + "units");
-                    }
+                    }/*
                 }else if (pill == 3) {
                     System.out.println("What quantity of stock do you need?:\n ");
                     int quantity = sc.nextInt();
@@ -160,7 +146,7 @@ public class Medicine {
             case 3:
                 System.out.println("Choose the pills that you need:\n" +
                         "1. Asuntol\n" +
-                        "2. Dinki\n" +
+                        //"2. Dinki\n" +
                         "");
                 int care = sc.nextInt();
                 if (care == 1){
@@ -186,26 +172,39 @@ public class Medicine {
                 }else{
                     System.out.println("The stock is insufficient. There are: " + Dinki.getStock() + "units");
                 }
-            }
+            }*/
         }
         System.out.println("********************************");
         System.out.println("\t\tTOTAL EXISTING STOCK");
         System.out.println("********************************");
         System.out.println("Marboquin = " + Marboquin.getStock());
         System.out.println("Ibuprofeno = " +Ibuprofeno.getStock());
-        System.out.println("Bismopet = " + Bismopet.getStock());
+        /*System.out.println("Bismopet = " + Bismopet.getStock());
         System.out.println("Benzodiazepina = " + Benzodiazepina.getStock());
         System.out.println("ArtriTabs = " + ArtriTabs.getStock());
         System.out.println("Asuntol = " + Asuntol.getStock());
-        System.out.println("Dinki = " + Dinki.getStock());
+        System.out.println("Dinki = " + Dinki.getStock());*/
+    }}
+
+    public void marboquin(){
+        presentation = "Pills";
+        usage = "Veterinarian";
+        dose= "25 mg";
+        price = 20000;
     }
-    public String toString() {
-        return "Medicine{" +
-                "name='" + name + '\'' +
-                ", presentation='" + presentation + '\'' +
-                ", usage='" + usage + '\'' +
-                ", dosis=" + dosis +
-                ", stock=" + stock +
-                '}';
+    public void ibuprofeno(){
+        presentation = "Pills";
+        usage = "Human";
+        dose= "3 mg";
+        price = 8000;
     }
-}
+    /*public String toString() {
+            return "Medicine{" +
+                    "name='" + name + '\'' +
+                    ", presentation='" + presentation + '\'' +
+                    ", usage='" + usage + '\'' +
+                    ", dose=" + dose +
+                    ", stock=" + stock +
+                    '}';*/
+    }
+
