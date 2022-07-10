@@ -3,58 +3,36 @@ package appointments;
 import employee.Schedule;
 import patient.Patient;
 import java.util.Scanner;
-
-    public class Appointments {
+public class Appointments {
         Patient patient;
         String status;
         //Date date;
-
         Schedule schedule;
-
-        //Service service;
-        //Schedule sc = new Schedule();
-
-
         public Appointments() {
         }
-
         public Appointments(Patient patient, Schedule schedule, String status) {
             this.patient = patient;
-            //this.date = date;
             this.status = status ;
-            //status = "Not started";
             this.schedule = schedule;
-            //this.service = service;
         }
-
         public Patient getPatient() {
             return patient;
         }
-
         public void setPatient(Patient patient) {
             this.patient = patient;
         }
-
         public String getStatus() {
             return status;
         }
-
         public void setStatus(String status) {
             this.status = status;
         }
-
-
-
         public Schedule getSchedule() {
             return schedule;
         }
-
         public void setSchedule(Schedule schedule) {
             this.schedule = schedule;
         }
-
-
-
         public void StatusNotStarted() {
             Scanner sc = new Scanner(System.in);
             Appointments state = new Appointments();

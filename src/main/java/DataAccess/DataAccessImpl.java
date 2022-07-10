@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class DataAccessImpl implements IDataAcces{
+public abstract class DataAccessImpl implements IDataAccess{
 
     @Override
     public boolean exist(String filename) throws DataAccessEx {
@@ -21,15 +21,29 @@ public class DataAccessImpl implements IDataAcces{
             try {
                 var out = new PrintWriter(new FileWriter(file));
                 out.close();
-              //  System.out.println("Se ha creado el archivo");
+              
             } catch (IOException ex) {
                 ex.printStackTrace();
                 throw new DataAccessEx("Exception :" + ex.getMessage());
             }
     }
+    @Override
+        public void writeFile(String filename, Owner owner, boolean anexar) throws EscrituraDatosEx {
+            var archivo = new File(nombreArchivo);
+            try {
+                var salida = new PrintWriter(new FileWriter(archivo, anexar));
+                salida.println(jugador.toString());
+                salida.close();
+              //  System.out.println("Se ha escrito informacion al archivo: " + jugador);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+                throw new EscrituraDatosEx("Excepcion al escribir información:" + ex.getMessage());
+            }
+        }
 
     @Override
     public void remove(String nombreArchivo) throws DataAccessEx {
 
     }
+
 }

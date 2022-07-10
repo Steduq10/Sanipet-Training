@@ -6,14 +6,11 @@ import java.util.Random;
 import java.util.RandomAccess;
 
 public class Dog extends Patient{
-
     public Dog() {
     }
-
     public Dog(String clinicNumber, String name, Owner owner, String breed, String statusVaccines, LocalDate desparasization) {
         super(clinicNumber, name,owner, breed, statusVaccines, desparasization);
     }
-
     @Override
     public  String getClinicNumber() {
         Random random = new Random();
@@ -32,12 +29,6 @@ public class Dog extends Patient{
                 ", statusVaccines=" + statusVaccines +
                 ", desparasization=" + deworming +
                 '}';
-    }
-
-    public static void main(String[] args) {
-        Dog dog = new Dog();
-        String generateClinicNumber1 = dog.getClinicNumber();
-        System.out.println(generateClinicNumber1);
     }
 }
 
