@@ -89,10 +89,8 @@ public class Medicine {
                         System.out.println(Marboquin.getStock());
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Marboquin.getStock() + "units");
-
                     }
                 }else if(pill == 2) {
-
                     System.out.println("What quantity of stock do you need?:\n ");
                     int quantity = sc.nextInt();
                     if (quantity <= Ibuprofeno.getStock()){
@@ -101,9 +99,7 @@ public class Medicine {
                         Ibuprofeno.setStock(stock);
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Ibuprofeno.getStock() + "units");
-
                     }
-
                 }else if (pill == 3) {
                     System.out.println("What quantity of stock do you need?:\n ");
                     int quantity = sc.nextInt();
@@ -113,10 +109,7 @@ public class Medicine {
                         Aminomix.setStock(stock);
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Aminomix.getStock() + "units");
-
                     }
-
-
                 }else if (pill == 4) {
                     System.out.println("What quantity of stock do you need?:\n ");
                     int quantity = sc.nextInt();
@@ -126,7 +119,6 @@ public class Medicine {
                         ArtriTabs.setStock(stock);
                     }else{
                         System.out.println("The stock is insufficient. There are: " + ArtriTabs.getStock() + "units");
-
                     }
                 }
                 break;
@@ -145,10 +137,8 @@ public class Medicine {
                         Marboquin.setStock(stock);
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Marboquin.getStock() + "units");
-
                     }
                 }else if(syrup == 2) {
-
                     System.out.println("What quantity of stock do you need?:\n ");
                     int quantity = sc.nextInt();
                     if (quantity <= Benzodiazepina.getStock()){
@@ -157,9 +147,7 @@ public class Medicine {
                         Benzodiazepina.setStock(stock);
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Benzodiazepina.getStock() + "units");
-
                     }
-
                 }
                 break;
             case 3:
@@ -178,7 +166,6 @@ public class Medicine {
                         System.out.println(Asuntol.getStock() + " units left in the stock");
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Asuntol.getStock() + "units");
-
                     }
                 }if (care == 2){
                 System.out.println("What quantity of stock do you need?:\n ");
@@ -190,7 +177,6 @@ public class Medicine {
                     System.out.println(Dinki.getStock() + " units left in the stock");
                 }else{
                     System.out.println("The stock is insufficient. There are: " + Dinki.getStock() + "units");
-
                 }
             }
         }
@@ -204,5 +190,4 @@ public class Medicine {
                 ", stock=" + stock +
                 '}';
     }
-
 }

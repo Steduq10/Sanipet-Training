@@ -24,7 +24,7 @@ public class DataAccessImpl implements IDataAcces{
               //  System.out.println("Se ha creado el archivo");
             } catch (IOException ex) {
                 ex.printStackTrace();
-                throw new DEx("Excepcion al crear concurso:" + ex.getMessage());
+                throw new DataAccessEx("Exception :" + ex.getMessage());
             }
     }
 
