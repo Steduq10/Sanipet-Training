@@ -2,70 +2,93 @@ package appointments;
 
 import employee.Schedule;
 import patient.Patient;
+import java.util.Scanner;
 
-public abstract class Appointments {
-    Patient patient;
-    Status status;
-    //Date date;
+    public class Appointments {
+        Patient patient;
+        String status;
+        //Date date;
 
-    Schedule schedule;
+        Schedule schedule;
 
-    Service service;
-    //Schedule sc = new Schedule();
+        //Service service;
+        //Schedule sc = new Schedule();
 
 
-    public Appointments() {
+        public Appointments() {
+        }
+
+        public Appointments(Patient patient, Schedule schedule, String status) {
+            this.patient = patient;
+            //this.date = date;
+            this.status = status ;
+            //status = "Not started";
+            this.schedule = schedule;
+            //this.service = service;
+        }
+
+        public Patient getPatient() {
+            return patient;
+        }
+
+        public void setPatient(Patient patient) {
+            this.patient = patient;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+
+
+        public Schedule getSchedule() {
+            return schedule;
+        }
+
+        public void setSchedule(Schedule schedule) {
+            this.schedule = schedule;
+        }
+
+
+
+        public void StatusNotStarted() {
+            Scanner sc = new Scanner(System.in);
+            Appointments state = new Appointments();
+            String status = "Not started";
+            System.out.println("Which is the status of the appointment: \n" +
+                    "1. Not started\n" +
+                    "2. Cancelled\n" +
+                    "3. Finished");
+            int st = sc.nextInt();
+            switch (st){
+                case 1:
+                    System.out.println("appointment not started");
+                    state.setStatus("Not started");
+                    break;
+                case 2:
+                    System.out.println("appointment cancelled");
+                    state.setStatus("Cancelled");
+                    break;
+                case 3:
+                    System.out.println("appointment finished");
+                    state.setStatus("Finished");
+                    Medicine medicine = new Medicine();
+                    medicine.GlobalStock();
+                    break;
+            }
+        }
+        @Override
+        public String toString() {
+            return "appointments{" +
+                    "patient=" + patient +
+                    ", status=" + status +
+                    ", schedule=" + schedule +
+                    '}';
+        }
     }
 
-    public Appointments(Patient patient, Schedule schedule, Service service) {
-        this.patient = patient;
-        //this.date = date;
-        this.status = Status.NOTSTARTED;
-        this.schedule = schedule;
-        this.service = service;
-    }
 
-    public Patient getPatient() {
-        return patient;
-    }
-
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-
-
-    public Schedule getSchedule() {
-        return schedule;
-    }
-
-    public void setSchedule(Schedule schedule) {
-        this.schedule = schedule;
-    }
-
-    public Service getService() {
-        return service;
-    }
-
-    public void setService(Service service) {
-        this.service = service;
-    }
-
-    @Override
-    public String toString() {
-        return "appointments{" +
-                "patient=" + patient +
-                ", status=" + status +
-                ", schedule=" + schedule +
-                ", service=" + service +
-                '}';
-    }
-}
