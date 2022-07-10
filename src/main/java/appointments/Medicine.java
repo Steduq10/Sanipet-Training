@@ -86,7 +86,8 @@ public class Medicine {
                         System.out.println("You bougth " + quantity + " units of " + Marboquin.getName());
                         int stock = Marboquin.getStock() - quantity;
                         Marboquin.setStock(stock);
-                        System.out.println(Marboquin.getStock());
+                        System.out.println(Marboquin.getStock() + " Marboquin remaining in stock");
+
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Marboquin.getStock() + "units");
                     }
@@ -94,9 +95,10 @@ public class Medicine {
                     System.out.println("What quantity of stock do you need?:\n ");
                     int quantity = sc.nextInt();
                     if (quantity <= Ibuprofeno.getStock()){
-                        System.out.println("You bougth " + quantity + "units of " + Ibuprofeno.getName() );
+                        System.out.println("You bougth " + quantity + " units of " + Ibuprofeno.getName() );
                         int stock = Ibuprofeno.getStock() - quantity;
                         Ibuprofeno.setStock(stock);
+                        System.out.println(Ibuprofeno.getStock() + " Ibuprofeno remaining in stock");
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Ibuprofeno.getStock() + "units");
                     }
@@ -104,9 +106,10 @@ public class Medicine {
                     System.out.println("What quantity of stock do you need?:\n ");
                     int quantity = sc.nextInt();
                     if (quantity <= Aminomix.getStock()){
-                        System.out.println("You bougth " + quantity + "units of " + Aminomix.getName() );
+                        System.out.println("You bougth " + quantity + " units of " + Aminomix.getName() );
                         int stock = Aminomix.getStock() - quantity;
                         Aminomix.setStock(stock);
+                        System.out.println(Aminomix.getStock() + " Aminomix remaining in stock");
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Aminomix.getStock() + "units");
                     }
@@ -114,9 +117,10 @@ public class Medicine {
                     System.out.println("What quantity of stock do you need?:\n ");
                     int quantity = sc.nextInt();
                     if (quantity <= ArtriTabs.getStock()){
-                        System.out.println("You bougth " + quantity + "units of " + ArtriTabs.getName() );
+                        System.out.println("You bougth " + quantity + " units of " + ArtriTabs.getName() );
                         int stock = ArtriTabs.getStock() - quantity;
                         ArtriTabs.setStock(stock);
+                        System.out.println(ArtriTabs.getStock() + " ArtriTabs remaining in stock");
                     }else{
                         System.out.println("The stock is insufficient. There are: " + ArtriTabs.getStock() + "units");
                     }
@@ -132,9 +136,10 @@ public class Medicine {
                     System.out.println("What quantity of stock do you need?:\n ");
                     int quantity = sc.nextInt();
                     if(quantity <= Bismopet.getStock()) {
-                        System.out.println("You bougth " + quantity + "units of " + Bismopet.getName());
+                        System.out.println("You bougth " + quantity + " units of " + Bismopet.getName());
                         int stock = Bismopet.getStock() - quantity;
                         Marboquin.setStock(stock);
+                        System.out.println(Bismopet.getStock() + " Marboquin remaining in stock");
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Marboquin.getStock() + "units");
                     }
@@ -142,9 +147,11 @@ public class Medicine {
                     System.out.println("What quantity of stock do you need?:\n ");
                     int quantity = sc.nextInt();
                     if (quantity <= Benzodiazepina.getStock()){
-                        System.out.println("You bougth " + quantity + "units of " + Benzodiazepina.getName() );
+                        System.out.println("You bougth " + quantity + " units of " + Benzodiazepina.getName() );
                         int stock = Benzodiazepina.getStock() - quantity;
                         Benzodiazepina.setStock(stock);
+                        System.out.println(Benzodiazepina.getStock() + " Benzodiazepina remaining in stock");
+
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Benzodiazepina.getStock() + "units");
                     }
@@ -163,7 +170,7 @@ public class Medicine {
                         System.out.println("You bougth " + quantity + " units of " + Asuntol.getName());
                         int stock = Asuntol.getStock() - quantity;
                         Asuntol.setStock(stock);
-                        System.out.println(Asuntol.getStock() + " units left in the stock");
+                        System.out.println(Asuntol.getStock() + " Asuntol remaining in stock");
                     }else{
                         System.out.println("The stock is insufficient. There are: " + Asuntol.getStock() + "units");
                     }
@@ -174,12 +181,23 @@ public class Medicine {
                     System.out.println("You bougth " + quantity + " units of " + Dinki.getName());
                     int stock = Dinki.getStock() - quantity;
                     Dinki.setStock(stock);
-                    System.out.println(Dinki.getStock() + " units left in the stock");
+                    System.out.println(Dinki.getStock() + " Dinki remaining in stock");
+
                 }else{
                     System.out.println("The stock is insufficient. There are: " + Dinki.getStock() + "units");
                 }
             }
         }
+        System.out.println("********************************");
+        System.out.println("\t\tTOTAL EXISTING STOCK");
+        System.out.println("********************************");
+        System.out.println("Marboquin = " + Marboquin.getStock());
+        System.out.println("Ibuprofeno = " +Ibuprofeno.getStock());
+        System.out.println("Bismopet = " + Bismopet.getStock());
+        System.out.println("Benzodiazepina = " + Benzodiazepina.getStock());
+        System.out.println("ArtriTabs = " + ArtriTabs.getStock());
+        System.out.println("Asuntol = " + Asuntol.getStock());
+        System.out.println("Dinki = " + Dinki.getStock());
     }
     public String toString() {
         return "Medicine{" +

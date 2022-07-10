@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 
 public abstract class DataAccessImpl implements IDataAccess{
 
-    @Override
+    /*@Override
     public boolean exist(String filename) throws DataAccessEx {
         var file = new File(filename);
         return file.exists();
@@ -44,6 +44,6 @@ public abstract class DataAccessImpl implements IDataAccess{
     @Override
     public void remove(String nombreArchivo) throws DataAccessEx {
 
-    }
+    }*/
 
 }

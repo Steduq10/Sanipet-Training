@@ -36,6 +36,8 @@ public class Menu {
                 case 2:
                     appointmentMenu();
                     break;
+                case 4:
+                    totalStockAvailable();
                 case 5:
                     System.out.println("Thank you for visiting");
                     System.exit(0);
@@ -208,6 +210,14 @@ public class Menu {
             state.StatusNotStarted();
             generalMenu();
         }
+
+        public static void totalStockAvailable(){
+            System.out.println("********************************");
+            System.out.println("\t\tTOTAL EXISTING STOCK");
+            System.out.println("********************************");
+            Medicine totalStock = new Medicine();
+        }
+
     }
 
 
